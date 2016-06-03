@@ -44,6 +44,8 @@
            
      <!--   <mapping resource="com/bird/model/Student.hbm.xml"/> -->
         <mapping class="Spider.Entity.Mulu"></mapping>
+        <mapping class="Spider.Entity.AskQuestion"></mapping>
+        <mapping class="Spider.Entity.DoctorInfo"></mapping>
     </session-factory>  
   
 </hibernate-configuration>  

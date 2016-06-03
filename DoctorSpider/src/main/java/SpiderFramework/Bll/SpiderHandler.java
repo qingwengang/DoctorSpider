@@ -9,6 +9,9 @@ import java.util.List;
  */
 public abstract class SpiderHandler<T extends BaseSpiderEntity> {
     private String spiderName;
+    public SpiderHandler(String spiderName){
+        this.spiderName=spiderName;
+    }
     public abstract List<T> getUnspiderData();
 
     public void DoSpider(){
@@ -22,6 +25,7 @@ public abstract class SpiderHandler<T extends BaseSpiderEntity> {
                     spiderFlag=2;
                 }
                 t.setSpiderFlag(spiderFlag);
+                Update(t);
             }
             unspiderdata=getUnspiderData();
         }

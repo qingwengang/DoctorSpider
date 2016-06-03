@@ -1,5 +1,7 @@
 package Spider.Entity;
 
+import SpiderFramework.Entity.BaseSpiderEntity;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,25 +10,17 @@ import javax.persistence.GenerationType;
  * Created by Administrator on 2016/5/6.
  */
 @Entity
-public class Mulu {
-    private int Id;
+public class Mulu extends BaseSpiderEntity {
+
     private String Name;
     private String Url;
     private String Source;
-    private int SpiderFlag;
+
     private int Level;
-    private int ParentId;
+    private long ParentId;
     private String Type;
     private long AskId;
-    @javax.persistence.Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    public int getId() {
-        return Id;
-    }
 
-    public void setId(int id) {
-        Id = id;
-    }
 
     public String getName() {
         return Name;
@@ -52,13 +46,6 @@ public class Mulu {
         Source = source;
     }
 
-    public int getSpiderFlag() {
-        return SpiderFlag;
-    }
-
-    public void setSpiderFlag(int spiderFlag) {
-        SpiderFlag = spiderFlag;
-    }
 
     public int getLevel() {
         return Level;
@@ -68,11 +55,11 @@ public class Mulu {
         Level = level;
     }
 
-    public int getParentId() {
+    public long getParentId() {
         return ParentId;
     }
 
-    public void setParentId(int parentId) {
+    public void setParentId(long parentId) {
         ParentId = parentId;
     }
 
