@@ -26,8 +26,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Doctor" target="1.5" />
-      <module name="DoctorSpider" target="1.5" />
+      <module name="Doctor" target="1.8" />
+      <module name="DoctorSpider" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
