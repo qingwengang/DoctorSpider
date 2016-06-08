@@ -9,13 +9,14 @@ import Spider.Bll.SpiderAskQuestionHandler;
  */
 public class AskStart {
     public static void main(String[] a){
+        //获取120ask的目录
 //        AskBll askBll=new AskBll();
 //        askBll.getMulu();
-
-//        GetQuestionList getQuestionListHandler=new GetQuestionList();
-//        getQuestionListHandler.DoSpider();
-
-        SpiderAskQuestionHandler handler=new SpiderAskQuestionHandler();
-        handler.DoSpider();
+        //获取120ask的问题列表
+        GetQuestionList getQuestionListHandler=new GetQuestionList();
+        getQuestionListHandler.DoSpider();
+        //获取120ask的问题内容
+//        SpiderAskQuestionHandler handler=new SpiderAskQuestionHandler();
+//        handler.DoSpider();
     }
 }

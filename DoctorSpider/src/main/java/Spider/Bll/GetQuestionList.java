@@ -8,16 +8,19 @@ import SpiderFramework.Bll.SpiderHandler;
 import SpiderFramework.Entity.BaseSpiderEntity;
 import Util.BTreeUtil;
 import Util.JsoupUtil;
+import Util.Log4jTest;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * 获取120ask的问题列表
  */
 public class GetQuestionList extends SpiderHandler<Mulu> {
+    private static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(Log4jTest.class);
     private MuluDao muluDao=new MuluDao();
     private AskQuestionDao askQuestionDao=new AskQuestionDao();
     public GetQuestionList() {
@@ -44,6 +47,7 @@ public class GetQuestionList extends SpiderHandler<Mulu> {
                     String lastPageUrl = e.attr("href");
                     pageCount = Integer.parseInt(lastPageUrl.substring(lastPageUrl.indexOf("/all") + 5, lastPageUrl.lastIndexOf("/")));
                 } catch (Exception ex) {
+                    logger.error("GetQuestionList1",ex);
                 }
             }
         }
@@ -63,7 +67,7 @@ public class GetQuestionList extends SpiderHandler<Mulu> {
                         }
                 }
             } catch (Exception e) {
-                System.out.print(e);
+                logger.error("GetQuestionList2",e);
             }
         }
     }
