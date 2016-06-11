@@ -26,13 +26,13 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/6/3.
  */
-public class SpiderAskQuestionHandler  extends SpiderHandler<AskQuestion> {
-    private static Logger logger = Logger.getLogger(SpiderAskQuestionHandler.class);
+public class SpiderAskQuestionHandler2 extends SpiderHandler<AskQuestion> {
+    private static Logger logger = Logger.getLogger(SpiderAskQuestionHandler2.class);
     private AskQuestionDao questionDao=new AskQuestionDao();
-    public SpiderAskQuestionHandler() {
+    public SpiderAskQuestionHandler2() {
         super("获取120ask问题内容",1,0);
     }
-    public SpiderAskQuestionHandler(int handlerCount,int handlerNo){
+    public SpiderAskQuestionHandler2(int handlerCount, int handlerNo){
         super("获取120ask问题内容",handlerCount,handlerNo);
     }
 
@@ -107,66 +107,15 @@ public class SpiderAskQuestionHandler  extends SpiderHandler<AskQuestion> {
             askauthortext=askAuthor.text();
             questionDo.setAuthorId(askauthortext);}catch (Exception e){
             logger.error("120ask 步骤2错误!" + askQuestion.getId(), e);
-            throw e;
         }
         //回答区
-        Elements answerDivs=doc.select(".b_answerli");
-        for(Element authDiv : answerDivs){
-            if(authDiv.select(".b_sp1").size()>0){
-                String docName=authDiv.select(".b_sp1").get(0).getElementsByTag("a").get(0).text();
-                String docUrl=authDiv.select(".b_sp1").get(0).getElementsByTag("a").get(0).attr("href");
-                String title=authDiv.select(".b_sp1").get(0).text().replace(docName,"");
-
-                Elements sp2s=authDiv.select(".b_sp2");
-                String expertise="";
-                for(Element sp2 : sp2s){
-                    if(sp2.text().startsWith("擅长:")){
-                        expertise=sp2.text().substring(3);
-                    }
-                }
-                String answerContent=authDiv.select(".b_anscont_cont").text();
-                Element eDate=authDiv.select(".b_anscont_time").get(0);
-                Date answerTime=null;
-                try{
-                    answerTime= FormatUtil.GetDateTimeByString(eDate.text());
-                }catch (Exception e){
-
-                }
-
-                try{
-                    DoctorInfo doctorInfo=new DoctorInfo();
-                    doctorInfo.setName(docName);
-                    doctorInfo.setTitle(title);
-                    doctorInfo.setExpertise(expertise);
-                    if(!docUrl.contains("doctor")){
-                        doctorInfo.setDocId(docUrl.split("/")[5]);
-                    }else{
-                        doctorInfo.setType(1);
-                        doctorInfo.setDocId(docUrl.split("/")[4]);
-                    }
-                    if(!BTreeUtil.CheckIfExist("docId", doctorInfo.getDocId())){
-                        new DoctorInfoDao().Add(doctorInfo);
-                        BTreeUtil.AddValue("docId",doctorInfo.getDocId());
-                    }
-                    AnswerDo answer=new AnswerDo();
-                    answer.setDoctorId(doctorInfo.getDocId());
-                    answer.setContent(answerContent);
-                    answer.setAnswerTime(answerTime);
-                    boolean ifExist=false;
-                    for(AnswerDo answerDo : questionDo.getAnswers()){
-                        if(answerDo.getDoctorId().equals(answer.getDoctorId())&& answerDo.getAnswerTime().equals(answer.getAnswerTime())){
-                            ifExist=true;
-                        }
-                    }
-                    if(!ifExist){
-                        questionDo.getAnswers().add(answer);
-                    }
-                }catch (Exception e){
-                    logger.error("add doctorinfo error!" + askQuestion.getId() + "|" + docUrl, e);
-                }
-
-            }
+        Elements answerDivs=doc.select(".crazy_new");
+        for(Element answerDiv : answerDivs){
+            AnswerDo answerDo=new AnswerDo();
+            answerDo.setContent(answerDiv.text());
+            questionDo.getAnswers().add(answerDo);
         }
+
         ObjectMapper mapper = new ObjectMapper();
         String json = "";
         try {

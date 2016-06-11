@@ -13,6 +13,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.text.MessageFormat;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -26,9 +27,12 @@ public class GetQuestionList extends SpiderHandler<Mulu> {
     public GetQuestionList() {
         super("获取120ask的问题列表");
     }
+    public GetQuestionList(int threadCount,int threadNo){
+        super("获取120ask的问题列表",threadCount,threadNo);
+    }
     @Override
     public List<Mulu> getUnspiderData() {
-        String sql="select * from mulu where source='120ask' and SpiderFlag=0 limit 0,10";
+        String sql= "select * from mulu where source='120ask' and SpiderFlag=0 and id%"+getThreadCount()+"="+getThreadNo()+" limit 0,10";
         List<Mulu> mulus=muluDao.Query(sql);
         return mulus;
     }

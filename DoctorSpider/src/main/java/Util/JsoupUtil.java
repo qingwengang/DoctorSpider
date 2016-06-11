@@ -1,5 +1,6 @@
 package Util;
 
+import Spider.Config.StockConfig;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -43,13 +44,12 @@ public class JsoupUtil {
 			} catch (Exception ex) {
 				doc=null;
 				flag=true;
-				System.out.println("111111111111111111111");
-				System.out.println(ex.getMessage());
 				try {
 					flag=false;
 					System.out.println(ex.getMessage()+":"+url);
+					new FileHelper().WriteAppend(StockConfig.JsoupLogPath, "log", url+ex.getMessage());
 					Thread.sleep(3000);
-				} catch (InterruptedException e) {
+				} catch (Exception e) {
 				}
 			}
 		}

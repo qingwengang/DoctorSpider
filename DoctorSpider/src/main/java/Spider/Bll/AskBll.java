@@ -10,7 +10,7 @@ import org.jsoup.select.Elements;
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/6/2.
+ * 获取120ask的目录
  */
 public class AskBll {
     private MuluDao muluDao=new MuluDao();

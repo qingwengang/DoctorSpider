@@ -1,13 +1,14 @@
 package Util;
 
 import java.io.*;
+import java.util.Date;
 
 /**
  * Created by Administrator on 2016/5/18.
  */
 public class FileHelper {
     public static void main(String[] args) throws IOException {
-		new FileHelper().Write("D:/filetest/a/a","wenwen","ljfdlsjflsjfls");
+		new FileHelper().WriteAppend("D:/filetest/a/a", "wenwen", new Date().toString() + "/r/n");
 //        String result=ReadEbayComments("fds", "fdsf")+"a";
 //        System.out.println(result);
 //        System.out.println("fds");
@@ -20,7 +21,8 @@ public class FileHelper {
             file.createNewFile();
         FileWriter a=new FileWriter(file,true);
         BufferedWriter b=new BufferedWriter(a);
-        b.write(content); a.flush(); b.close();
+        b.write(content);
+        a.flush(); b.close();
 //        FileOutputStream out=new FileOutputStream(file,false);
 //        out.write(content.getBytes("utf-8"));
 //        out.close();
@@ -33,7 +35,20 @@ public class FileHelper {
         if(!file.exists())
             file.createNewFile();
         FileOutputStream out=new FileOutputStream(file);
+
         out.write(content.getBytes("utf-8"));
+        out.close();
+    }
+    public void WriteAppend(String path,String id,String content) throws IOException {
+        File mulu=new File(path);
+        if(!mulu.exists()) mulu.mkdirs();
+        File file=new File(path+"/"+id+".txt");
+        if(!file.exists())
+            file.createNewFile();
+        FileOutputStream out=new FileOutputStream(file,true);
+
+        out.write((new Date().toString()+" "+content).getBytes("utf-8"));
+        out.write("\r\n".getBytes());
         out.close();
     }
         public static String ReadEbayComments(String userId,String iid) throws IOException{
