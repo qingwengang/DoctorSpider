@@ -1,0 +1,12 @@
+----120ask
+select count(1) from askquestion where SpiderFlag=0;
+select count(1) from askquestion where SpiderFlag=1;
+select count(2) from askquestion where SpiderFlag=2;
+
+
+
+----fh
+select count(1) from fhquestion where SpiderFlag=1
+
+---hdf
+select * from hdfmulu where SpiderFlag=0 and level=2  and id%10=1 LIMIT 0,10
