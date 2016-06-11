@@ -28,7 +28,7 @@ public class GetHdfQuestionListHandler extends SpiderHandler<HdfMulu> {
 
     @Override
     public void SpiderBll(HdfMulu hdfMulu) throws IOException {
-
+        //hahaha
     }
 
     @Override
