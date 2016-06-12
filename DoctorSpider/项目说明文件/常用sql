@@ -10,3 +10,27 @@ select count(1) from fhquestion where SpiderFlag=1
 
 ---hdf
 select * from hdfmulu where SpiderFlag=0 and level=2  and id%10=1 LIMIT 0,10
+
+
+-- ----------------------------
+-- Table structure for hdfpage
+-- ----------------------------
+DROP TABLE IF EXISTS `hdfpage`;
+CREATE TABLE `hdfpage` (
+  `Id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `Riqi` varchar(20) DEFAULT NULL,
+  `Url` varchar(255) DEFAULT NULL,
+  `SpiderFlag` int(11) DEFAULT '0',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3055 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for hdfpagedetail
+-- ----------------------------
+DROP TABLE IF EXISTS `hdfpagedetail`;
+CREATE TABLE `hdfpagedetail` (
+  `Id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `Url` varchar(255) DEFAULT NULL,
+  `SpiderFlag` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

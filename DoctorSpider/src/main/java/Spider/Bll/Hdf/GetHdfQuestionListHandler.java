@@ -9,7 +9,7 @@ import java.text.MessageFormat;
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/6/11.
+ *
  */
 public class GetHdfQuestionListHandler extends SpiderHandler<HdfMulu> {
     private HdfMuluDao muluDao=new HdfMuluDao();
@@ -28,7 +28,7 @@ public class GetHdfQuestionListHandler extends SpiderHandler<HdfMulu> {
 
     @Override
     public void SpiderBll(HdfMulu hdfMulu) throws IOException {
-        //hahaha
+
     }
 
     @Override

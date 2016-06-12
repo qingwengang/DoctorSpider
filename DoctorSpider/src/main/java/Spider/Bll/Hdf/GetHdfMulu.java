@@ -15,24 +15,24 @@ import java.util.List;
 public class GetHdfMulu {
     private static HdfMuluDao muluDao=new HdfMuluDao();
     public static void main(String[]  args){
-//        GetLevel1Mulu();
+        GetLevel1Mulu();
         GetLevel2Mulu();
     }
     public static void GetLevel1Mulu(){
-        String url="http://www.haodf.com/jibing/list.htm";
-        Document doc = JsoupUtil.GetDocument(url);
-        Elements divs=doc.select(".kstl");
-        for(Element div : divs){
-            Element href=div.getElementsByTag("a").get(0);
-            String muluurl=href.attr("href");
-            String name=href.text();
-            HdfMulu mulu=new HdfMulu();
-            mulu.setLevel(1);
-            mulu.setName(name);
-            mulu.setUrl(muluurl);
-            mulu.setSpiderFlag(0);
-            muluDao.Add(mulu);
-        }
+            String url="http://www.haodf.com/jibing/list.htm";
+            Document doc = JsoupUtil.GetDocument(url);
+            Elements divs=doc.select(".kstl");
+            for(Element div : divs){
+                Element href=div.getElementsByTag("a").get(0);
+                String muluurl=href.attr("href");
+                String name=href.text();
+                HdfMulu mulu=new HdfMulu();
+                mulu.setLevel(1);
+                mulu.setName(name);
+                mulu.setUrl(muluurl);
+                mulu.setSpiderFlag(0);
+                muluDao.Add(mulu);
+            }
     }
     public  static void GetLevel2Mulu(){
         List<HdfMulu> levelMulus=muluDao.Query("select * from hdfmulu where level=1");
