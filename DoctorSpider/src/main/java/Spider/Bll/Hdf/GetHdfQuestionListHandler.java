@@ -11,7 +11,7 @@ import java.util.List;
 /**
  *
  */
-public class GetHdfQuestionListHandler extends SpiderHandler<HdfMulu> {
+public class GetHdfQuestionListHandler extends SpiderHandler<HdfMulu,HdfMulu> {
     private HdfMuluDao muluDao=new HdfMuluDao();
     public GetHdfQuestionListHandler(){
         super("获取hdf的问题列表",1,0);
@@ -31,8 +31,4 @@ public class GetHdfQuestionListHandler extends SpiderHandler<HdfMulu> {
 
     }
 
-    @Override
-    public void Update(HdfMulu hdfMulu) {
-        muluDao.Update(hdfMulu);
-    }
 }

@@ -50,6 +50,7 @@
         <mapping class="Spider.Entity.FHQuestion"></mapping>
         <mapping class="Spider.Entity.HdfPage"></mapping>
         <mapping class="Spider.Entity.HdfPageDetail"></mapping>
+        <mapping class="Spider.Entity.JjQuestion"></mapping>
     </session-factory>  
   
 </hibernate-configuration>  

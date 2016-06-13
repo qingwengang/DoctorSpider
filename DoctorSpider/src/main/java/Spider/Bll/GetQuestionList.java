@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 /**
  * 获取120ask的问题列表
  */
-public class GetQuestionList extends SpiderHandler<Mulu> {
+public class GetQuestionList extends SpiderHandler<Mulu,Mulu> {
     private static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(Log4jTest.class);
     private MuluDao muluDao=new MuluDao();
     private AskQuestionDao askQuestionDao=new AskQuestionDao();
@@ -76,8 +76,4 @@ public class GetQuestionList extends SpiderHandler<Mulu> {
         }
     }
 
-    @Override
-    public void Update(Mulu mulu) {
-        muluDao.Update(mulu);
-    }
 }

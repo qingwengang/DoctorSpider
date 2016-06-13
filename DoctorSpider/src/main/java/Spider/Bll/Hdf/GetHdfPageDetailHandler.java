@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 获取日期分页中每页的url
  */
-public class GetHdfPageDetailHandler extends SpiderHandler<HdfPage> {
+public class GetHdfPageDetailHandler extends SpiderHandler<HdfPage,HdfPage> {
     private HdfPageDao dao=new HdfPageDao();
     private HdfPageDetailDao detailDao=new HdfPageDetailDao();
     public GetHdfPageDetailHandler() {
@@ -54,10 +54,5 @@ public class GetHdfPageDetailHandler extends SpiderHandler<HdfPage> {
                 }
             }
         }
-    }
-
-    @Override
-    public void Update(HdfPage hdfPage) {
-        dao.Update(hdfPage);
     }
 }

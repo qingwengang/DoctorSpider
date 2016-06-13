@@ -3,6 +3,7 @@ package Spider.Dao;
 import Util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -26,6 +27,24 @@ public class BaseDao<T> {
         session.beginTransaction();
         session.save(entity);
         session.getTransaction().commit();
+        session.close();
+    }
+    public void Add(List<T> entities){
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session session = sf.openSession();
+        Transaction tx=session.beginTransaction();
+        int i=0;
+        for(T t : entities){
+            session.save(t);
+            i++;
+            if(i%50==0){
+                session.flush();
+                session.clear();
+                tx.commit();
+                tx = session.beginTransaction();
+            }
+        }
+        tx.commit();
         session.close();
     }
     public <T> List<T> Query(String sql) {

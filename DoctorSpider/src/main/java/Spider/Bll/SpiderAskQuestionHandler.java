@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/6/3.
  */
-public class SpiderAskQuestionHandler  extends SpiderHandler<AskQuestion> {
+public class SpiderAskQuestionHandler  extends SpiderHandler<AskQuestion,AskQuestion> {
     private static Logger logger = Logger.getLogger(SpiderAskQuestionHandler.class);
     private AskQuestionDao questionDao=new AskQuestionDao();
     public SpiderAskQuestionHandler() {
@@ -186,8 +186,5 @@ public class SpiderAskQuestionHandler  extends SpiderHandler<AskQuestion> {
         //end 回答区
     }
 
-    @Override
-    public void Update(AskQuestion askQuestion) {
-        questionDao.Update(askQuestion);
-    }
+
 }

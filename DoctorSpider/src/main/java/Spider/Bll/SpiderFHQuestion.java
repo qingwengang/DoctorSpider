@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/6/8.
  */
-public class SpiderFHQuestion extends SpiderHandler<FHQuestion> {
+public class SpiderFHQuestion extends SpiderHandler<FHQuestion,FHQuestion> {
     private static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(SpiderFHQuestion.class);
     public static void main(String[] args){
         Spider(102785561);
@@ -112,8 +112,4 @@ public class SpiderFHQuestion extends SpiderHandler<FHQuestion> {
         }
     }
 
-    @Override
-    public void Update(FHQuestion baseSpiderEntity) {
-        quesionDao.Update(baseSpiderEntity);
-    }
 }
