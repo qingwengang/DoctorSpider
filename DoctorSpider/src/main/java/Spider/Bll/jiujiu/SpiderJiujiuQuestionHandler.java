@@ -4,6 +4,7 @@ import Spider.Dao.JjQuestionDao;
 import Spider.Entity.JjQuestion;
 import SpiderFramework.Bll.SpiderHandler;
 import Util.JsoupUtil;
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -30,6 +31,9 @@ public class SpiderJiujiuQuestionHandler extends SpiderHandler<JjQuestion,JjQues
     public void SpiderBll(JjQuestion jjQuestion) throws IOException {
         String url="http://ask.9939.com/id/"+4000000;
         Document doc= JsoupUtil.GetDocument(url);
+        String html=doc.html().replaceAll("(?i)<br[^>]*>", "卿文刚");
+        doc=Jsoup.parse(html);
+        System.out.print(doc.html());
         Elements es=doc.select(".a_bol");
         String typeName="";
         for(Element e : es){

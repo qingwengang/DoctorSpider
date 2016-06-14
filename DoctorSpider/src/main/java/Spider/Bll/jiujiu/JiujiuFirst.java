@@ -80,7 +80,7 @@ public class JiujiuFirst {
                 jjDao.Add(questions);
                 questions.clear();
             }
-            jjDao.Add(questions);
         }
+        jjDao.Add(questions);
     }
 }
