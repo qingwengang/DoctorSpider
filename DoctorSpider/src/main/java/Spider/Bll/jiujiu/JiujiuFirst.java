@@ -70,17 +70,17 @@ public class JiujiuFirst {
         }
     }
     public static void initQuestion(){
-        List<JjQuestion> questions=new LinkedList<JjQuestion>();
-        for(int i=4000000;i<5000000;i++){
-            JjQuestion question=new JjQuestion();
-            question.setOutId(i);
-            question.setSpiderFlag(0);
-            questions.add(question);
-            if(questions.size()>100){
-                jjDao.Add(questions);
-                questions.clear();
-            }
-        }
-        jjDao.Add(questions);
+//        List<JjQuestion> questions=new LinkedList<JjQuestion>();
+//        for(int i=4000000;i<5000000;i++){
+//            JjQuestion question=new JjQuestion();
+//            question.setOutId(i);
+//            question.setSpiderFlag(0);
+//            questions.add(question);
+//            if(questions.size()>100){
+//                jjDao.Add(questions);
+//                questions.clear();
+//            }
+//        }
+//        jjDao.Add(questions);
     }
 }
