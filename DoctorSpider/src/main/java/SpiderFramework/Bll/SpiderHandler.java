@@ -35,6 +35,7 @@ public abstract class SpiderHandler<T extends BaseSpiderEntity,F extends BaseSpi
         return dao.Query(getUnspiderDataSql);
     }
 
+
     public void DoSpider(){
         LogUtil.Log120Ask(spiderName+":"+threadNo+"开始！");
         List<T> unspiderdata=getUnspiderData();

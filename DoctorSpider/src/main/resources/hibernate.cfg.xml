@@ -36,7 +36,7 @@
         <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>  
   
         <!-- Echo all executed SQL to stdout -->  
-        <property name="show_sql">false</property>
+        <property name="show-sql">false</property>
         <property name="hibernate.cache.use_second_level_cache">false</property>
   
         <!-- Drop and re-create the database schema on startup  
@@ -52,6 +52,7 @@
         <mapping class="Spider.Entity.HdfPage"></mapping>
         <mapping class="Spider.Entity.HdfPageDetail"></mapping>
         <mapping class="Spider.Entity.JjQuestion"></mapping>
+        <mapping class="Spider.Entity.JKQuestion"></mapping>
     </session-factory>  
   
 </hibernate-configuration>  
