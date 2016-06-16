@@ -78,4 +78,17 @@ public class Mulu extends BaseSpiderEntity {
     public void setAskId(long askId) {
         AskId = askId;
     }
+
+    public Mulu() {
+    }
+
+    public Mulu(String name, String url, String source, int level, long parentId, String type, long askId) {
+        Name = name;
+        Url = url;
+        Source = source;
+        Level = level;
+        ParentId = parentId;
+        Type = type;
+        AskId = askId;
+    }
 }
