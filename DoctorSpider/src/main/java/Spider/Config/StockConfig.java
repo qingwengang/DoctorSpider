@@ -12,4 +12,5 @@ public class StockConfig {
     public static String JsoupLogPath="F:/jsoupLog/"+now.getMonth()+"/"+now.getDay()+"/";
     public static String FHQuestionPath="F:/FH/";
     public static String JiujiuPath="F:/9939/";
+    public static String JKPath="F:/JK/";
 }
