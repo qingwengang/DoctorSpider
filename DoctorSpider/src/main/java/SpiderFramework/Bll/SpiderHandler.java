@@ -18,6 +18,7 @@ public abstract class SpiderHandler<T extends BaseSpiderEntity,F extends BaseSpi
     private BaseDao<T> dao;
     private BaseDao<F> daoF;
     private List<F> addEntities;
+
     public SpiderHandler(String spiderName){
         this.spiderName=spiderName;
     }

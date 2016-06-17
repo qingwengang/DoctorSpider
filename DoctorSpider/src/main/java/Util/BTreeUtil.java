@@ -3,6 +3,7 @@ package Util;
 
 
 import Spider.Dao.BaseDao;
+import Spider.Dao.MuluDao;
 
 import java.util.HashMap;
 import java.util.List;
@@ -32,8 +33,11 @@ public class BTreeUtil {
         }else if(name.equals("docId")){
             columnName="docid";
             tableName="doctorinfo";
+        }else if(name.equals("39questionid")){
+            columnName="outid";
+            tableName="sjquestion";
         }
-        List<String> ls=new BaseDao().GetOneColumn(columnName,tableName);
+        List<String> ls=new MuluDao().GetOneColumn(columnName,tableName);
         for(String id : ls){
             btree.AddString(id);
         }

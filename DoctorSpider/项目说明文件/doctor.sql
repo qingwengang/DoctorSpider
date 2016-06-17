@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50162
 File Encoding         : 65001
 
-Date: 2016-06-15 18:04:59
+Date: 2016-06-17 10:11:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -145,8 +145,9 @@ CREATE TABLE `jkquestion` (
   `TypeName` varchar(50) DEFAULT NULL,
   `OutId` bigint(20) DEFAULT NULL,
   `SpiderFlag` int(11) DEFAULT NULL,
+  `PublishTime` datetime DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=123664 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=135080 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for mulu
@@ -163,7 +164,7 @@ CREATE TABLE `mulu` (
   `Type` varchar(20) DEFAULT NULL,
   `AskId` int(11) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1984 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2506 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for question
