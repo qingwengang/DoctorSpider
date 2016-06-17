@@ -1,5 +1,6 @@
-package Spider.Bll.Thread.SJ;
+package Spider.Bll.Thread;
 
+import Spider.Bll.JKW.SpiderJKWQuestionHandler;
 import Spider.Bll.sanjiu.GetSJQuestionListHandler;
 import Spider.Bll.sanjiu.SpiderSJQuestionHandler;
 import SpiderFramework.Bll.SpiderHandler;
@@ -25,6 +26,9 @@ public class CommonHandlerThread implements Runnable {
                 break;
             case "spider39question":
                 handler=new SpiderSJQuestionHandler(count,no);
+                break;
+            case "spiderjkwquestion":
+                handler=new SpiderJKWQuestionHandler(count,no);
                 break;
         }
         handler.DoSpider();

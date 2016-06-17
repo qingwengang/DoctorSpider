@@ -1,9 +1,12 @@
 package Spider.Bll.JKW;
 
+import Spider.Config.StockConfig;
+import Spider.DO.JKW.JKWQuestionDO;
 import Spider.Dao.BaseDao;
 import Spider.Dao.JKWQuestionDao;
 import Spider.Entity.JKWQuestion;
 import SpiderFramework.Bll.SpiderHandler;
+import Util.JsonUtil;
 import Util.JsoupUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -19,6 +22,7 @@ import java.util.List;
  * Created by Administrator on 2016/6/17.
  */
 public class SpiderJKWQuestionHandler extends SpiderHandler<JKWQuestion,JKWQuestion> {
+    private JsonUtil jsonUtil=new JsonUtil();
     public SpiderJKWQuestionHandler() {
         super("获取jkw的问题信息");
         setGetUnspiderDataSql(MessageFormat.format("select * from jkwquestion where SpiderFlag=0  and id%{0}={1} LIMIT 0,10", 1, 0));
@@ -35,8 +39,12 @@ public class SpiderJKWQuestionHandler extends SpiderHandler<JKWQuestion,JKWQuest
         Document doc= JsoupUtil.GetDocument(url);
         String html=doc.html().replaceAll("(?i)<br[^>]*>", "卿文刚");
         doc= Jsoup.parse(html);
+        Element h5=doc.select("h5").get(0);
+        Elements hrefs=h5.select("a");
+        String typeName=hrefs.get(hrefs.size()-1).text();
         String title=doc.select(".why > h1").get(0).text();
         String sDate=doc.select(".why > i").get(0).text();
+        String sexage=doc.select(".name_age").get(0).text();
         String sDesc=doc.select(".pd_txt").get(0).text();
         Elements answerDivs=doc.select(".an_cont");
         List<String> answer=new LinkedList<>();
@@ -49,9 +57,11 @@ public class SpiderJKWQuestionHandler extends SpiderHandler<JKWQuestion,JKWQuest
             }
             answer.add(answerString);
         }
-        System.out.println(title);
-        System.out.println(sDate);
-        System.out.println(sDesc);
-        System.out.println(answer);
+        JKWQuestionDO questionDO=new JKWQuestionDO(title,typeName,sDesc,sexage,answer);
+        jsonUtil.WriteJsonToFileFromObj(questionDO, StockConfig.JKWPath+questionDO.getTypeName()+"/",jkwQuestion.getOutId());
+//        System.out.println(title);
+//        System.out.println(sDate);
+//        System.out.println(sDesc);
+//        System.out.println(answer);
     }
 }

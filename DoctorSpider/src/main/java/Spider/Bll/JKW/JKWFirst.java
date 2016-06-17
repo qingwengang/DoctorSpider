@@ -9,7 +9,7 @@ import Spider.Entity.JKWQuestion;
 public class JKWFirst {
     private static JKWQuestionDao dao=new JKWQuestionDao();
     public static void main(String[] args){
-        for(int i=3031111;i<3031131;i++){
+        for(int i=3031111;i<3032131;i++){
             JKWQuestion question=new JKWQuestion();
             question.setOutId(Long.toString(i));
             question.setSpiderFlag(0);

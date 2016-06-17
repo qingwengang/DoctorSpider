@@ -13,7 +13,7 @@ public class SpiderJKWQuestionHandlerTest {
     @Test
     public void testSpiderBll() throws Exception {
         JKWQuestion question=new JKWQuestion();
-        question.setOutId("13710762");
+        question.setOutId("11111");
         handler.SpiderBll(question);
     }
 }

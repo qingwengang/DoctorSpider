@@ -1,7 +1,6 @@
 package Spider.Start;
 
-import Spider.Bll.GetQuestionList;
-import Spider.Bll.Thread.SJ.CommonHandlerThread;
+import Spider.Bll.Thread.CommonHandlerThread;
 
 /**
  * Created by Administrator on 2016/6/17.

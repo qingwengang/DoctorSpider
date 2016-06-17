@@ -14,4 +14,5 @@ public class StockConfig {
     public static String JiujiuPath="F:/9939/";
     public static String JKPath="F:/JK/";
     public static String SJPath="F:/39/";
+    public static String JKWPath="F:/JKW/";
 }

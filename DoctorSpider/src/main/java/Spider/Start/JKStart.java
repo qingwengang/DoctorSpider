@@ -27,7 +27,7 @@ public class JKStart {
 //            BaseHandlerThread<SpiderJKQuestionHandler> th=new BaseHandlerThread<>(count,i,SpiderJKQuestionHandler.class);
             SpiderJKQuestionHandlerThread th=new SpiderJKQuestionHandlerThread(count,i);
             Thread t=new Thread(th);
-            t.run();
+            t.start();
         }
     }
 }
