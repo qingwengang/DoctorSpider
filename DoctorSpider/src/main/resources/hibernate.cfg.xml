@@ -55,6 +55,8 @@
         <mapping class="Spider.Entity.JKQuestion"></mapping>
         <mapping class="Spider.Entity.SJQuestion"></mapping>
         <mapping class="Spider.Entity.JKWQuestion"></mapping>
+        <mapping class="Spider.Entity.OnlineQuestion"></mapping>
+        <mapping class="Spider.Entity.OnlineMuluRelation"></mapping>
     </session-factory>  
   
 </hibernate-configuration>  

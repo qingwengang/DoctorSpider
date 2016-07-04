@@ -27,10 +27,10 @@ public class SpiderFHQuestion extends SpiderHandler<FHQuestion,FHQuestion> {
     }
     private FHQuesionDao quesionDao=new FHQuesionDao();
     public SpiderFHQuestion() {
-        super("获取HF问题内容",1,0);
+        super("获取HF问题内容",1,0,new FHQuesionDao(),new FHQuesionDao());
     }
     public SpiderFHQuestion(int handlerCount,int handlerNo){
-        super("获取HF问题内容",handlerCount,handlerNo);
+        super("获取HF问题内容",handlerCount,handlerNo,new FHQuesionDao(),new FHQuesionDao());
     }
     private static void Spider(long id){
         String url="http://iask.fh21.com.cn/question/"+id+".html";

@@ -1,5 +1,6 @@
 package Spider.Bll;
 
+import Spider.DO.Online.OnlineQuestionDo;
 import Spider.Dao.AskQuestionDao;
 import Spider.Dao.MuluDao;
 import Spider.Entity.AskQuestion;
@@ -14,6 +15,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.text.MessageFormat;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -24,11 +26,8 @@ public class GetQuestionList extends SpiderHandler<Mulu,Mulu> {
     private static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(Log4jTest.class);
     private MuluDao muluDao=new MuluDao();
     private AskQuestionDao askQuestionDao=new AskQuestionDao();
-    public GetQuestionList() {
-        super("获取120ask的问题列表");
-    }
     public GetQuestionList(int threadCount,int threadNo){
-        super("获取120ask的问题列表",threadCount,threadNo);
+        super("获取120ask的问题列表",threadCount,threadNo,new MuluDao(),new MuluDao());
     }
     @Override
     public List<Mulu> getUnspiderData() {
@@ -74,6 +73,11 @@ public class GetQuestionList extends SpiderHandler<Mulu,Mulu> {
                 logger.error("GetQuestionList2",e);
             }
         }
+    }
+
+    public List<OnlineQuestionDo> CreateOnlineQuestion(String mulu,int count){
+        List<OnlineQuestionDo> result=new LinkedList<>();
+        return result;
     }
 
 }

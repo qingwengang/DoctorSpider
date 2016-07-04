@@ -2,6 +2,7 @@ package Spider.Bll;
 
 import Spider.Config.StockConfig;
 import Spider.DO.AnswerDo;
+import Spider.DO.Online.OnlineQuestionDo;
 import Spider.DO.QuestionDo;
 import Spider.Dao.AskQuestionDao;
 import Spider.Dao.DoctorInfoDao;
@@ -14,6 +15,7 @@ import Util.FormatUtil;
 import Util.JsoupUtil;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -21,6 +23,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.text.MessageFormat;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -30,10 +33,10 @@ public class SpiderAskQuestionHandler  extends SpiderHandler<AskQuestion,AskQues
     private static Logger logger = Logger.getLogger(SpiderAskQuestionHandler.class);
     private AskQuestionDao questionDao=new AskQuestionDao();
     public SpiderAskQuestionHandler() {
-        super("获取120ask问题内容",1,0);
+        super("获取120ask问题内容",1,0,new AskQuestionDao(),new AskQuestionDao());
     }
     public SpiderAskQuestionHandler(int handlerCount,int handlerNo){
-        super("获取120ask问题内容",handlerCount,handlerNo);
+        super("获取120ask问题内容",handlerCount,handlerNo,new AskQuestionDao(),new AskQuestionDao());
     }
 
     @Override
@@ -47,6 +50,8 @@ public class SpiderAskQuestionHandler  extends SpiderHandler<AskQuestion,AskQues
     public void SpiderBll(AskQuestion askQuestion) throws IOException {
         String url="http://www.120ask.com/question/"+askQuestion.getOutId()+".htm";
         Document doc = JsoupUtil.GetDocument(url);
+        String html=doc.html().replaceAll("(?i)<br[^>]*>", "卿文刚");
+        doc= Jsoup.parse(html);
         Element daohang=doc.select(".b_route").get(0);
         Elements daohangHrefs=daohang.getElementsByTag("a");
         for(Element href : daohangHrefs){
@@ -185,6 +190,51 @@ public class SpiderAskQuestionHandler  extends SpiderHandler<AskQuestion,AskQues
         }
         //end 回答区
     }
-
-
+    public List<OnlineQuestionDo> CreateQuestion(String mulus,int getCount){
+        List<OnlineQuestionDo> dos=new LinkedList<>();
+        String[] muluArrays=mulus.split("\\|");
+        StringBuffer sbWhere=new StringBuffer();
+        for(String mulu : muluArrays){
+            sbWhere.append("'").append(mulu).append("',");
+        }
+        String where=sbWhere.toString();
+        where=where.substring(0,where.length()-1);
+        String sql=MessageFormat.format("select count(1) from askquestion where SpiderFlag=1 and type in({0})",where);
+        int count=questionDao.GetOneColumn(sql);
+        List<AskQuestion> questionList=new LinkedList<>();
+        if(count<=getCount){
+            String getQuestionSql=MessageFormat.format("select * from askquestion where SpiderFlag=1 and type in({0}) ",where);
+            questionList=questionDao.Query(getQuestionSql);
+        }else{
+            int pageSize=count/getCount;
+            for(int i=1;i<=getCount;i++){
+                String getQuestionSql=MessageFormat.format("select * from askquestion where SpiderFlag=1 and type in({0}) LIMIT {1},1",where,i*pageSize-1);
+                AskQuestion question=questionDao.QuerySingle(getQuestionSql);
+                questionList.add(question);
+            }
+        }
+        for(AskQuestion question : questionList){
+            String path= StockConfig.askQuestionPath+question.getType()+"/"+question.getOutId().substring(0,1)+"/"+question.getOutId().substring(1,2)+"/";
+            QuestionDo questionDo=null;
+            try {
+                String json=new FileHelper().Read(path,question.getOutId());
+                ObjectMapper mapper = new ObjectMapper();
+                questionDo=mapper.readValue(json, QuestionDo.class);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if(questionDo!=null){
+                OnlineQuestionDo onlineQuestionDo=new OnlineQuestionDo();
+                onlineQuestionDo.setTitle(questionDo.getTitle());
+                onlineQuestionDo.setContent(questionDo.getContent());
+                onlineQuestionDo.setNeedHelp(questionDo.getNeedHelp());
+                for(AnswerDo answer : questionDo.getAnswers()){
+                    onlineQuestionDo.getAnswers().add(answer.getContent());
+                }
+                onlineQuestionDo.setAskQuestion(question);
+                dos.add(onlineQuestionDo);
+            }
+        }
+        return dos;
+    }
 }

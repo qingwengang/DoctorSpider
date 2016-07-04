@@ -14,10 +14,10 @@ import java.util.List;
 public class GetHdfQuestionListHandler extends SpiderHandler<HdfMulu,HdfMulu> {
     private HdfMuluDao muluDao=new HdfMuluDao();
     public GetHdfQuestionListHandler(){
-        super("获取hdf的问题列表",1,0);
+        super("获取hdf的问题列表",1,0,new HdfMuluDao(),new HdfMuluDao());
     }
     public GetHdfQuestionListHandler(int handlerCount,int handlerNo){
-        super("获取hdf的问题列表",handlerCount,handlerNo);
+        super("获取hdf的问题列表",handlerCount,handlerNo,new HdfMuluDao(),new HdfMuluDao());
     }
     @Override
     public List<HdfMulu> getUnspiderData() {

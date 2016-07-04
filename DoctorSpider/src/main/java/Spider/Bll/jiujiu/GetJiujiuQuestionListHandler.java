@@ -26,7 +26,7 @@ public class GetJiujiuQuestionListHandler extends SpiderHandler<Mulu,JjQuestion>
     private JjQuestionDao questionDao=new JjQuestionDao();
 
     public GetJiujiuQuestionListHandler() {
-        super("获取9939问题列表",1,0);
+        super("获取9939问题列表",1,0,new MuluDao(),new JjQuestionDao());
     }
 
     public GetJiujiuQuestionListHandler( int threadCount, int threadNo) {

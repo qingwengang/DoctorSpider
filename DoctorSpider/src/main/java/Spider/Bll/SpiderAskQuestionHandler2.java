@@ -30,10 +30,10 @@ public class SpiderAskQuestionHandler2 extends SpiderHandler<AskQuestion,AskQues
     private static Logger logger = Logger.getLogger(SpiderAskQuestionHandler2.class);
     private AskQuestionDao questionDao=new AskQuestionDao();
     public SpiderAskQuestionHandler2() {
-        super("获取120ask问题内容",1,0);
+        super("获取120ask问题内容",1,0,new AskQuestionDao(),new AskQuestionDao());
     }
     public SpiderAskQuestionHandler2(int handlerCount, int handlerNo){
-        super("获取120ask问题内容",handlerCount,handlerNo);
+        super("获取120ask问题内容",handlerCount,handlerNo,new AskQuestionDao(),new AskQuestionDao());
     }
 
     @Override

@@ -21,18 +21,18 @@ public class AskStart {
 //            t.start();
 //        }
         //获取120ask的问题内容
-//        int handlerCount=10;
-//        for(int i=0;i<handlerCount;i++){
-//            SpiderAskQuestionHandlerThread th=new SpiderAskQuestionHandlerThread(handlerCount,i);
-//            Thread t=new Thread(th);
-//            t.start();
-//        }
-        //获取120ask的问题内容(补丁版)
         int handlerCount=10;
         for(int i=0;i<handlerCount;i++){
-            SpiderAskQuestionHandlerThread2 th=new SpiderAskQuestionHandlerThread2(handlerCount,i);
+            SpiderAskQuestionHandlerThread th=new SpiderAskQuestionHandlerThread(handlerCount,i);
             Thread t=new Thread(th);
             t.start();
         }
+        //获取120ask的问题内容(补丁版)
+//        int handlerCount=10;
+//        for(int i=0;i<handlerCount;i++){
+//            SpiderAskQuestionHandlerThread2 th=new SpiderAskQuestionHandlerThread2(handlerCount,i);
+//            Thread t=new Thread(th);
+//            t.start();
+//        }
     }
 }

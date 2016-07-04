@@ -26,7 +26,7 @@ import java.util.List;
  */
 public class SpiderJKQuestionHandler extends SpiderHandler<JKQuestion,JKQuestion> {
     public SpiderJKQuestionHandler() {
-        super("获取JK问题信息",1,0);
+        super("获取JK问题信息",1,0, new JKQuestionDao(), new JKQuestionDao());
         setGetUnspiderDataSql(MessageFormat.format("select * from jkquestion where SpiderFlag=0  and id%{0}={1} LIMIT 0,10", 1, 0));
     }
 

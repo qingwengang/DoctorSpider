@@ -61,6 +61,24 @@ public class BaseDao<T> {
         session.close();
         return result;
     }
+    public <T> T QuerySingle(String sql){
+        List l;
+        T t=null;
+        List<T> result=new LinkedList<T>();
+        SessionFactory sf=HibernateUtil.getSessionFactory();
+        Session session=sf.openSession();
+        session.beginTransaction();
+        l=session.createSQLQuery(sql).addEntity(entityClass).list();
+        for (Object o : l) {
+            result.add((T)o);
+        }
+        session.getTransaction().commit();
+        session.close();
+        if(result!=null && result.size()>0){
+            t=result.get(0);
+        }
+        return t;
+    }
     public <T> void Update(T entity){
         SessionFactory sf=HibernateUtil.getSessionFactory();
         Session session=sf.openSession();
@@ -79,5 +97,16 @@ public class BaseDao<T> {
         }
         session.close();
         return ls;
+    }
+    public int GetOneColumn(String sql){
+        SessionFactory sf=HibernateUtil.getSessionFactory();
+        Session session=sf.openSession();
+        List<String> ls=new LinkedList<String>();
+        List list=session.createSQLQuery(sql).list();
+        for(Iterator iterator =list.iterator();iterator.hasNext();){
+            ls.add(iterator.next().toString());
+        }
+        session.close();
+        return Integer.parseInt(ls.get(0));
     }
 }

@@ -22,13 +22,15 @@ public abstract class SpiderHandler<T extends BaseSpiderEntity,F extends BaseSpi
     public SpiderHandler(String spiderName){
         this.spiderName=spiderName;
     }
-    public SpiderHandler(String spiderName,int threadCount,int threadNo){
+//    public SpiderHandler(String spiderName,int threadCount,int threadNo){
+//        this(spiderName);
+//        this.threadCount=threadCount;
+//        this.threadNo=threadNo;
+//    }
+    public SpiderHandler(String spiderName,int threadCount,int threadNo,BaseDao<T> dao,BaseDao<F> daoF){
         this(spiderName);
         this.threadCount=threadCount;
         this.threadNo=threadNo;
-    }
-    public SpiderHandler(String spiderName,int threadCount,int threadNo,BaseDao<T> dao,BaseDao<F> daoF){
-        this(spiderName,threadCount,threadNo);
         this.dao=dao;
         this.daoF=daoF;
     }

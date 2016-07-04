@@ -24,7 +24,7 @@ import java.util.List;
 public class SpiderJiujiuQuestionHandler extends SpiderHandler<JjQuestion,JjQuestion> {
 
     public SpiderJiujiuQuestionHandler() {
-        super("获取99问题信息",0,1);
+        super("获取99问题信息",0,1,new JjQuestionDao(),new JjQuestionDao());
         setGetUnspiderDataSql(MessageFormat.format("select * from jjquestion where SpiderFlag=0  and id%{0}={1} LIMIT 0,10", 1, 0));
     }
 

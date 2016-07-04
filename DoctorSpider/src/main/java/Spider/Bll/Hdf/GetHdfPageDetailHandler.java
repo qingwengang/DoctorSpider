@@ -21,11 +21,11 @@ public class GetHdfPageDetailHandler extends SpiderHandler<HdfPage,HdfPage> {
     private HdfPageDao dao=new HdfPageDao();
     private HdfPageDetailDao detailDao=new HdfPageDetailDao();
     public GetHdfPageDetailHandler() {
-        super("获取hdf日期分页",1,0);
+        super("获取hdf日期分页",1,0,new HdfPageDao(),new HdfPageDao());
     }
 
     public GetHdfPageDetailHandler( int threadCount, int threadNo) {
-        super("获取hdf日期分页", threadCount, threadNo);
+        super("获取hdf日期分页", threadCount, threadNo,new HdfPageDao(),new HdfPageDao());
     }
 
     @Override
