@@ -1,10 +1,12 @@
 package SpiderFramework.Bll;
 
+import Spider.DO.Online.OnlineQuestionDo;
 import Spider.Dao.BaseDao;
 import SpiderFramework.Entity.BaseSpiderEntity;
 import Util.LogUtil;
 
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -61,6 +63,23 @@ public abstract class SpiderHandler<T extends BaseSpiderEntity,F extends BaseSpi
         }
         LogUtil.Log120Ask(spiderName+":"+threadNo+"结束！");
     }
+
+    public List<OnlineQuestionDo> CreateQuestion(String mulus,int getCount){
+        List<OnlineQuestionDo> dos=new LinkedList<>();
+        String[] muluArrays=mulus.split("\\|");
+        StringBuffer sbWhere=new StringBuffer();
+        for(String mulu : muluArrays){
+            sbWhere.append("'").append(mulu).append("',");
+        }
+        String where=sbWhere.toString();
+        where=where.substring(0,where.length()-1);
+        return CreateQuestionImpl(where,getCount);
+    }
+
+    public  List<OnlineQuestionDo> CreateQuestionImpl(String where,int getCount){
+        return null;
+    }
+
     public abstract void SpiderBll(T t) throws IOException;
 
     public int getThreadCount() {

@@ -1,5 +1,6 @@
 package Spider.Bll.jiujiu;
 
+import Spider.DO.Online.OnlineQuestionDo;
 import Spider.Dao.BaseDao;
 import Spider.Dao.JjQuestionDao;
 import Spider.Dao.MuluDao;
@@ -70,4 +71,6 @@ public class GetJiujiuQuestionListHandler extends SpiderHandler<Mulu,JjQuestion>
             }
         }
     }
+
+
 }

@@ -1,6 +1,7 @@
 package Spider.Bll.sanjiu;
 
 import Spider.Config.StockConfig;
+import Spider.DO.Online.OnlineQuestionDo;
 import Spider.DO.SJ.SJQuestionDO;
 import Spider.Dao.BaseDao;
 import Spider.Dao.SJQuestionDao;
@@ -23,7 +24,7 @@ import java.util.List;
  * Created by Administrator on 2016/6/17.
  */
 public class SpiderSJQuestionHandler extends SpiderHandler<SJQuestion,SJQuestion> {
-    private SJQuestionDao dao=new SJQuestionDao();
+    private SJQuestionDao questionDao=new SJQuestionDao();
 
     public SpiderSJQuestionHandler() {
         super("获取39问题信息", 1, 0, new SJQuestionDao() , new SJQuestionDao());
@@ -58,9 +59,9 @@ public class SpiderSJQuestionHandler extends SpiderHandler<SJQuestion,SJQuestion
         Element answersDiv = doc.select("#doctor_reply").get(0);
         List<String> answerlist=new LinkedList<String>();
         if(answersDiv!=null){
-            String answerString="";
             Elements answers=answersDiv.select(".t_right");
             for(Element answer : answers){
+                String answerString="";
                 Elements answerps=answer.select(".user_p");
                 for(Element answerp : answerps){
                     answerString+=answerp.text()+"卿文刚";
@@ -75,9 +76,9 @@ public class SpiderSJQuestionHandler extends SpiderHandler<SJQuestion,SJQuestion
                     }
                 }
                 answerlist.add(answerString);
-//                System.out.println(answerString);
             }
         }
+        sjQuestion.setTypeName(typeName);
         SJQuestionDO questionDo=new SJQuestionDO(title,typeName,desc,answerlist);
         ObjectMapper mapper = new ObjectMapper();
         String json = "";
@@ -89,11 +90,54 @@ public class SpiderSJQuestionHandler extends SpiderHandler<SJQuestion,SJQuestion
             String path= StockConfig.SJPath+questionDo.getTypeName();
             try {
                 new FileHelper().Write(path,sjQuestion.getOutId(),json);
+                sjQuestion.setIfWriteFile(1);
             } catch (IOException e) {
                 throw e;
             }
         }
-//        System.out.println(title);
-//        System.out.println(desc);
+    }
+
+    @Override
+    public List<OnlineQuestionDo> CreateQuestionImpl(String where, int getCount) {
+        List<OnlineQuestionDo> dos=new LinkedList<>();
+        String sqlTemp="select {0} from sjquestion where SpiderFlag=1 and typename in({1}) and (IfCreated is null or IfCreated!=1) {2}";
+        String sql=MessageFormat.format(sqlTemp,"count(1)",where,"");
+        int count=questionDao.GetOneColumn(sql);
+        List<SJQuestion> questionList=new LinkedList<>();
+        if(count<=getCount){
+            String getQuestionSql=MessageFormat.format(sqlTemp,"*",where,"");
+            questionList=questionDao.Query(getQuestionSql);
+        }else{
+            int pageSize=count/getCount;
+            for(int i=1;i<=getCount;i++){
+                String getQuestionSql=MessageFormat.format(sqlTemp,"*",where,MessageFormat.format("limit {0},1",i*pageSize-1));
+                SJQuestion question=questionDao.QuerySingle(getQuestionSql);
+                questionList.add(question);
+            }
+        }
+        for(SJQuestion question : questionList){
+            String path= StockConfig.SJPath+question.getTypeName()+"/";
+            SJQuestionDO questionDo =null;
+            try {
+                String json=new FileHelper().Read(path,question.getOutId());
+                ObjectMapper mapper = new ObjectMapper();
+                questionDo=mapper.readValue(json, SJQuestionDO.class);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if(questionDo!=null){
+                OnlineQuestionDo onlineQuestionDo=new OnlineQuestionDo();
+                onlineQuestionDo.setSource("sj");
+                onlineQuestionDo.setOutId(question.getOutId());
+                onlineQuestionDo.setTitle(questionDo.getTitle());
+                onlineQuestionDo.setContent(questionDo.getDesc());
+                for(String answer : questionDo.getAnswers()){
+                    onlineQuestionDo.getAnswers().add(answer);
+                }
+                onlineQuestionDo.setSjQuestion(question);
+                dos.add(onlineQuestionDo);
+            }
+        }
+        return dos;
     }
 }

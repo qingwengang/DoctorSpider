@@ -2,7 +2,9 @@ package Spider.Bll;
 
 import Spider.Config.StockConfig;
 import Spider.DO.FH.FHQuestionDo;
+import Spider.DO.Online.OnlineQuestionDo;
 import Spider.Dao.FHQuesionDao;
+import Spider.Entity.AskQuestion;
 import Spider.Entity.FHQuestion;
 import SpiderFramework.Bll.SpiderHandler;
 import SpiderFramework.Entity.BaseSpiderEntity;
@@ -15,6 +17,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.text.MessageFormat;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -93,10 +96,8 @@ public class SpiderFHQuestion extends SpiderHandler<FHQuestion,FHQuestion> {
             }
             if(json!=null){
                 String path= StockConfig.FHQuestionPath;
-                String muluName=tagArray[tagArray.length-1];
-                for(String tag : tagArray){
-                    path+=tag.trim()+"/";
-                }
+                String muluName=tagArray[tagArray.length-1].trim();
+                path+=muluName+"/";
                 try {
                     new FileHelper().Write(path,que.getOutId(),json);
                     que.setWriteFileFlag(1);
@@ -112,4 +113,45 @@ public class SpiderFHQuestion extends SpiderHandler<FHQuestion,FHQuestion> {
         }
     }
 
+    @Override
+    public List<OnlineQuestionDo> CreateQuestionImpl(String where, int getCount) {
+        List<OnlineQuestionDo> dos=new LinkedList<>();
+        String sql=MessageFormat.format("select count(1) from fhquestion where WriteFileFlag=1 and MuluName in ({0}) and (ifcreated is null or ifcreated!=1)",where);
+        int count=quesionDao.GetOneColumn(sql);
+        List<FHQuestion> questionList=new LinkedList<>();
+        if(count<=getCount){
+            String getQuestionSql=MessageFormat.format("select * from fhquestion where WriteFileFlag=1 and muluname in ({0}) and (ifcreated is null or ifcreated!=1)", where);
+            questionList=quesionDao.Query(getQuestionSql);
+        }else{
+            int pageSize=count/getCount;
+            for(int i=1;i<=getCount;i++){
+                String getQuestionSql=MessageFormat.format("select * from fhquestion where WriteFileFlag=1 and muluname in({0})  and (ifcreated is null or ifcreated!=1) LIMIT {1},1",where,i*pageSize-1);
+                FHQuestion question=quesionDao.QuerySingle(getQuestionSql);
+                questionList.add(question);
+            }
+        }
+        for(FHQuestion question : questionList){
+            String path=StockConfig.FHQuestionPath+question.getMuluName()+"/";
+            FHQuestionDo questionDo=null;
+            try {
+                String json=new FileHelper().Read(path,question.getOutId());
+                ObjectMapper mapper = new ObjectMapper();
+                questionDo=mapper.readValue(json, FHQuestionDo.class);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if(questionDo!=null) {
+                OnlineQuestionDo onlineQuestionDo=new OnlineQuestionDo();
+                onlineQuestionDo.setTitle(questionDo.getTitle());
+                onlineQuestionDo.setContent(questionDo.getQuestionInfo());
+                onlineQuestionDo.setDesc(questionDo.getDesc());
+                for(String answer : questionDo.getAnswers()){
+                    onlineQuestionDo.getAnswers().add(answer);
+                }
+                onlineQuestionDo.setFhQuestion(question);
+                dos.add(onlineQuestionDo);
+            }
+        }
+        return dos;
+    }
 }

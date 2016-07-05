@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 public class JjQuestion extends BaseSpiderEntity{
     private String TypeName;
     private long OutId;
+    private Integer IfCreated;
 
     public String getTypeName() {
         return TypeName;
@@ -26,5 +27,13 @@ public class JjQuestion extends BaseSpiderEntity{
 
     public void setOutId(long outId) {
         OutId = outId;
+    }
+
+    public Integer getIfCreated() {
+        return IfCreated;
+    }
+
+    public void setIfCreated(Integer ifCreated) {
+        IfCreated = ifCreated;
     }
 }

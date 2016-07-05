@@ -14,14 +14,14 @@ public class SJStart {
         for(int i=0;i<count;i++){
             CommonHandlerThread th=new CommonHandlerThread("get39questionList",count,i);
             Thread t=new Thread(th);
-            t.run();
+            t.start();
         }
     }
     public static void GetQuestion(int count){
         for(int i=0;i<count;i++){
             CommonHandlerThread th=new CommonHandlerThread("spider39question",count,i);
             Thread t=new Thread(th);
-            t.run();
+            t.start();
         }
     }
 }

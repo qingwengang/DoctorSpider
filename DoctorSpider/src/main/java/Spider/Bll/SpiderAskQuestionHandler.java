@@ -190,15 +190,57 @@ public class SpiderAskQuestionHandler  extends SpiderHandler<AskQuestion,AskQues
         }
         //end 回答区
     }
-    public List<OnlineQuestionDo> CreateQuestion(String mulus,int getCount){
+//    public List<OnlineQuestionDo> CreateQuestion(String mulus,int getCount){
+//        List<OnlineQuestionDo> dos=new LinkedList<>();
+//        String[] muluArrays=mulus.split("\\|");
+//        StringBuffer sbWhere=new StringBuffer();
+//        for(String mulu : muluArrays){
+//            sbWhere.append("'").append(mulu).append("',");
+//        }
+//        String where=sbWhere.toString();
+//        where=where.substring(0,where.length()-1);
+//        String sql=MessageFormat.format("select count(1) from askquestion where SpiderFlag=1 and type in({0})",where);
+//        int count=questionDao.GetOneColumn(sql);
+//        List<AskQuestion> questionList=new LinkedList<>();
+//        if(count<=getCount){
+//            String getQuestionSql=MessageFormat.format("select * from askquestion where SpiderFlag=1 and type in({0}) ",where);
+//            questionList=questionDao.Query(getQuestionSql);
+//        }else{
+//            int pageSize=count/getCount;
+//            for(int i=1;i<=getCount;i++){
+//                String getQuestionSql=MessageFormat.format("select * from askquestion where SpiderFlag=1 and type in({0}) LIMIT {1},1",where,i*pageSize-1);
+//                AskQuestion question=questionDao.QuerySingle(getQuestionSql);
+//                questionList.add(question);
+//            }
+//        }
+//        for(AskQuestion question : questionList){
+//            String path= StockConfig.askQuestionPath+question.getType()+"/"+question.getOutId().substring(0,1)+"/"+question.getOutId().substring(1,2)+"/";
+//            QuestionDo questionDo=null;
+//            try {
+//                String json=new FileHelper().Read(path,question.getOutId());
+//                ObjectMapper mapper = new ObjectMapper();
+//                questionDo=mapper.readValue(json, QuestionDo.class);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            if(questionDo!=null){
+//                OnlineQuestionDo onlineQuestionDo=new OnlineQuestionDo();
+//                onlineQuestionDo.setTitle(questionDo.getTitle());
+//                onlineQuestionDo.setContent(questionDo.getContent());
+//                onlineQuestionDo.setNeedHelp(questionDo.getNeedHelp());
+//                for(AnswerDo answer : questionDo.getAnswers()){
+//                    onlineQuestionDo.getAnswers().add(answer.getContent());
+//                }
+//                onlineQuestionDo.setAskQuestion(question);
+//                dos.add(onlineQuestionDo);
+//            }
+//        }
+//        return dos;
+//    }
+
+    @Override
+    public List<OnlineQuestionDo> CreateQuestionImpl(String where, int getCount) {
         List<OnlineQuestionDo> dos=new LinkedList<>();
-        String[] muluArrays=mulus.split("\\|");
-        StringBuffer sbWhere=new StringBuffer();
-        for(String mulu : muluArrays){
-            sbWhere.append("'").append(mulu).append("',");
-        }
-        String where=sbWhere.toString();
-        where=where.substring(0,where.length()-1);
         String sql=MessageFormat.format("select count(1) from askquestion where SpiderFlag=1 and type in({0})",where);
         int count=questionDao.GetOneColumn(sql);
         List<AskQuestion> questionList=new LinkedList<>();

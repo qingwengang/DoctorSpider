@@ -2,6 +2,7 @@ package Spider.Bll.JK;
 
 import Spider.Config.StockConfig;
 import Spider.DO.JK.JKQuestionDO;
+import Spider.DO.Online.OnlineQuestionDo;
 import Spider.Dao.BaseDao;
 import Spider.Dao.JKQuestionDao;
 import Spider.Entity.JKQuestion;
@@ -95,15 +96,10 @@ public class SpiderJKQuestionHandler extends SpiderHandler<JKQuestion,JKQuestion
                 throw e;
             }
         }
-//        System.out.println(title);
-//        System.out.println(sex);
-//        System.out.println(age);
-//        System.out.println(address);
-//        System.out.println(questionDesc);
-//        System.out.println(answers);
-//        System.out.println(spanDate);
-//        for(String an : answers){
-//            System.out.println(an);
-//        }
+    }
+
+    @Override
+    public List<OnlineQuestionDo> CreateQuestionImpl(String where, int getCount) {
+        return super.CreateQuestionImpl(where, getCount);
     }
 }

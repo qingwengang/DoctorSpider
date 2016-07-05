@@ -1,7 +1,10 @@
 package Spider.Bll.sanjiu;
 
+import Spider.DO.Online.OnlineQuestionDo;
 import Spider.Entity.SJQuestion;
 import org.junit.Test;
+
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -15,5 +18,11 @@ public class SpiderSJQuestionHandlerTest {
         SJQuestion question=new SJQuestion();
         question.setOutId("43870746");
         handler.SpiderBll(question);
+    }
+
+    @Test
+    public void testCreateQuestionImpl() throws Exception {
+        List<OnlineQuestionDo> dos=handler.CreateQuestionImpl("'普外科'",5);
+        System.out.println(dos);
     }
 }

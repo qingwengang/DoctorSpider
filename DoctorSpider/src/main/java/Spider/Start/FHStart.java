@@ -19,12 +19,12 @@ public class FHStart {
             t.start();
         }
     }
-    private static void InitQuestionId(){
-        FHQuesionDao quesionDao=new FHQuesionDao();
-        for(long i=100000001;i<102000001;i++){
-            FHQuestion question=new FHQuestion();
-            question.setOutId(((Long)i).toString());
-            quesionDao.Add(question);
-        }
-    }
+//    private static void InitQuestionId(){
+//        FHQuesionDao quesionDao=new FHQuesionDao();
+//        for(long i=100000001;i<102000001;i++){
+//            FHQuestion question=new FHQuestion();
+//            question.setOutId(((Long)i).toString());
+//            quesionDao.Add(question);
+//        }
+//    }
 }

@@ -13,6 +13,7 @@ public class FHQuestion extends BaseSpiderEntity {
     private String MuluId;
     private String MuluName;
     private int WriteFileFlag;
+    private int IfCreated;
     public String getOutId() {
         return OutId;
     }
@@ -43,5 +44,13 @@ public class FHQuestion extends BaseSpiderEntity {
 
     public void setWriteFileFlag(int writeFileFlag) {
         WriteFileFlag = writeFileFlag;
+    }
+
+    public int getIfCreated() {
+        return IfCreated;
+    }
+
+    public void setIfCreated(int ifCreated) {
+        IfCreated = ifCreated;
     }
 }
