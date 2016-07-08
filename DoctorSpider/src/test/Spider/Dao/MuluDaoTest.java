@@ -2,6 +2,8 @@ package Spider.Dao;
 
 import Spider.Entity.Mulu;
 
+import java.util.Random;
+
 import static org.junit.Assert.*;
 
 /**
@@ -23,6 +25,7 @@ public class MuluDaoTest {
 
     @org.junit.Test
     public void testQuery1() throws Exception {
-
+        Random rd=new Random();
+        System.out.println(rd.nextInt(3));
     }
 }

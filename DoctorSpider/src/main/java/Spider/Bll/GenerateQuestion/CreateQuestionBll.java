@@ -7,6 +7,7 @@ import Spider.Entity.OnlineMuluRelation;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by qingwengang on 2016/7/4.
@@ -18,6 +19,7 @@ public class CreateQuestionBll {
         OnlineMuluRelation relation=relationDao.GetByOnlineMuluId(muluId);
         List<OnlineQuestionDo> asks=new SpiderAskQuestionHandler().CreateQuestion(relation.getAsk120Relation(),5);
         questionQueueList.add(asks);
+        Random rd=new Random();
 
     }
 }
