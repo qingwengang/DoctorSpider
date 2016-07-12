@@ -29,6 +29,10 @@ public class JsoupUtil {
 		}
 		return doc;
 	}
+	public static Document GetDocumentByHtml(String html,String encodingType){
+		Document doc = Jsoup.parse(html, encodingType);
+		return doc;
+	}
 
 	public static Document GetDocument(String url,String proxyIP,int proxyPort) {
 		boolean flag = true;
