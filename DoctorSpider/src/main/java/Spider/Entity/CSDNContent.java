@@ -12,6 +12,7 @@ public class CSDNContent {
     private long Id;
     private long MuluId;
     private String Content;
+    private String Type;
 
     public long getMuluId() {
         return MuluId;
@@ -37,5 +38,13 @@ public class CSDNContent {
 
     public void setId(long id) {
         Id = id;
+    }
+
+    public String getType() {
+        return Type;
+    }
+
+    public void setType(String type) {
+        Type = type;
     }
 }

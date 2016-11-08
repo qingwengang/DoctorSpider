@@ -5,37 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8697f40-5a4a-4000-a0ff-a061ea141dcf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/CSDNContent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Dao/CSDNContentDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/CSDNMulu.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Dao/CSDNMuluDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/CSDNStart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/GenerateQuestion/CreateQuestionBll.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/test/Spider/Bll/GenerateQuestion/CreateQuestionBllTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/School/CsdnSpider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/GetImgUrl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/School/ImgUpload.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/School/MuluSpider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/OnlineMuluRelation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Dao/OnlineMuluRelationDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/OnlineQuestion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Dao/OnlineQuestionDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/DO/Online/OnlineQuestionDo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/SchoolContent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Dao/SchoolContentDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/SchoolMulu.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Dao/SchoolMuluDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/School/SchoolSpider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/SchoolStart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/test/Spider/Bll/SpiderAskQuestionHandlerTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/SpiderCSDNThread.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/test/Spider/Bll/SpiderFHQuestionTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/xywy/XywyFirst.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpiderWeb/web/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoctorSpider/src/main/java/Util/JsoupUtil.java" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Util/JsoupUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoctorSpider/src/test/Spider/Dao/MuluDaoTest.java" afterPath="$PROJECT_DIR$/DoctorSpider/src/test/Spider/Dao/MuluDaoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoctorSpider/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/resources/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/CSDNContent.java" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/CSDNContent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/SpiderCSDNThread.java" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/SpiderCSDNThread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Doctor.iws" />
@@ -70,32 +41,8 @@
         <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/SpiderCSDNThread.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="49" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CSDNContent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/CSDNContent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#329#330#0" expanded="false" />
-                <element signature="e#358#359#0" expanded="false" />
-                <element signature="e#400#401#0" expanded="false" />
-                <element signature="e#431#432#0" expanded="false" />
-                <element signature="e#465#466#0" expanded="false" />
-                <element signature="e#495#496#0" expanded="false" />
-                <element signature="e#541#542#0" expanded="false" />
-                <element signature="e#574#575#0" expanded="false" />
-                <element signature="e#741#742#0" expanded="false" />
-                <element signature="e#764#765#0" expanded="false" />
-              </folding>
+              <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,11 +50,9 @@
       <file leaf-file-name="CSDNStart.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/CSDNStart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6055777">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.2274211">
+              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,9 +61,10 @@
         <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/School/CsdnSpider.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="false" />
+                <marker date="1478001415848" expanded="true" signature="1178:1184" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -199,9 +145,9 @@
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/SpiderCSDN.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Dao/CSDNContentDao.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/CSDNStart.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/CSDNContent.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/SpiderCSDNThread.java" />
-        <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/CSDNStart.java" />
       </list>
     </option>
   </component>
@@ -225,10 +171,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2" />
-    <option name="y" value="1" />
-    <option name="width" value="1598" />
-    <option name="height" value="858" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -253,9 +199,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -562,6 +505,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1058,6 +1004,8 @@
       <workItem from="1477740821941" duration="9900000" />
       <workItem from="1477807479663" duration="1798000" />
       <workItem from="1477823953391" duration="1234000" />
+      <workItem from="1478001476616" duration="1500000" />
+      <workItem from="1478589193779" duration="1549000" />
     </task>
     <task id="LOCAL-00001" summary="好大夫">
       <created>1465727560188</created>
@@ -1081,24 +1029,26 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184794000" />
+    <option name="totallyTimeSpent" value="187843000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="1" width="1598" height="858" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3218707" sideWeight="0.49055454" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.67209554" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2696011" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26793247" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29323798" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28072917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1109,10 +1059,8 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1638,14 +1586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7741456">
-          <caret line="62" column="51" selection-start-line="62" selection-start-column="51" selection-end-line="62" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Dao/BaseDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6260745">
@@ -1677,29 +1617,33 @@
     <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/School/CsdnSpider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
+            <marker date="1478001415848" expanded="true" signature="1178:1184" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5391499">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/CSDNContent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.59956473">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#329#330#0" expanded="false" />
-            <element signature="e#358#359#0" expanded="false" />
-            <element signature="e#400#401#0" expanded="false" />
-            <element signature="e#431#432#0" expanded="false" />
-            <element signature="e#465#466#0" expanded="false" />
-            <element signature="e#495#496#0" expanded="false" />
-            <element signature="e#541#542#0" expanded="false" />
-            <element signature="e#574#575#0" expanded="false" />
-            <element signature="e#741#742#0" expanded="false" />
-            <element signature="e#764#765#0" expanded="false" />
+            <element signature="e#425#426#0" expanded="false" />
+            <element signature="e#456#457#0" expanded="false" />
+            <element signature="e#820#821#0" expanded="false" />
+            <element signature="e#847#848#0" expanded="false" />
+            <element signature="e#887#888#0" expanded="false" />
+            <element signature="e#914#915#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1707,20 +1651,16 @@
     <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/SpiderCSDNThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="49" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/CSDNStart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6055777">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.2274211">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

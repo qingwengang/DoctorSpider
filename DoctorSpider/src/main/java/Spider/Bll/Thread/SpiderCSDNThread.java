@@ -41,6 +41,7 @@ public class SpiderCSDNThread implements Runnable {
                         CSDNContent csdnContent=new CSDNContent();
                         csdnContent.setContent(content);
                         csdnContent.setMuluId(mulu.getId());
+                        csdnContent.setType(mulu.getType());
                         contentDao.Add(csdnContent);
                     }
                 }
