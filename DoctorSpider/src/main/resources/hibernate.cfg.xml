@@ -11,7 +11,7 @@
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>  
         <!-- <property name="connection.url">jdbc:mysql://localhost:3306/amazon?useUnicode=true&characterEncoding=utf8</property>   -->
         <property name="hibernate.connection.url">
-        <![CDATA[jdbc:mysql://127.0.0.1:3306/SchoolProduct?useUnicode=true&characterEncoding=utf8]]>
+        <![CDATA[jdbc:mysql://127.0.0.1:3306/School?useUnicode=true&characterEncoding=utf8]]>
 		</property>
         <property name="connection.username">root</property>  
         <property name="connection.password">ganggang</property>  
@@ -61,6 +61,7 @@
         <mapping class="Spider.Entity.SchoolContent"></mapping>
         <mapping class="Spider.Entity.CSDNMulu"></mapping>
         <mapping class="Spider.Entity.CSDNContent"></mapping>
+        <mapping class="Spider.Entity.Cnblogs"></mapping>
     </session-factory>  
   
 </hibernate-configuration>  

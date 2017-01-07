@@ -10,7 +10,7 @@ package Spider.Start;
  */
 public class CSDNStart {
     public static void main(String[] args){
-//        CsdnSpider.getmulu("JavaScript",1,573);
+//        CsdnSpider.getmulu("CSharp",1,800);
         for(int i=0;i<1;i++){
             SpiderCSDNThread handler=new SpiderCSDNThread(1,i);
             Thread t=new Thread(handler);

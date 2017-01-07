@@ -3,6 +3,7 @@ package Spider.Bll.School;
 import Spider.Dao.CSDNMuluDao;
 import Spider.Entity.CSDNMulu;
 import Util.JsoupUtil;
+import Util.LogUtil;
 import com.mongodb.DBPortPool;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -29,6 +30,7 @@ public class CsdnSpider {
                 mulu.setType(typeName);
                 muluDao.Add(mulu);
             }
+            LogUtil.Log120Ask(typeName+"-"+i);
         }
 
     }
