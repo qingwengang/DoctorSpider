@@ -19,11 +19,16 @@ public class CnblogsContentThread implements Runnable {
         List<Cnblogs> muluList=cnblogsDao.Query(sql);
         while (muluList!=null && muluList.size()>0){
             for(Cnblogs cnblog : muluList){
-                cnblog.setSpiderFlag(1);
-                Document doc= JsoupUtil.GetDocument(cnblog.getUrl());
-                Element e=doc.getElementById("cnblogs_post_body");
-                cnblog.setContent(e.html());
-                cnblogsDao.Update(cnblog);
+                try{
+                    cnblog.setSpiderFlag(1);
+                    Document doc= JsoupUtil.GetDocument(cnblog.getUrl());
+                    Element e=doc.getElementById("cnblogs_post_body");
+                    cnblog.setContent(e.html());
+                    cnblogsDao.Update(cnblog);
+                }catch (Exception e){
+
+                }
+
             }
         }
     }

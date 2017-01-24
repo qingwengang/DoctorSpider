@@ -1,10 +1,14 @@
 package Util;
 
 import Spider.Config.StockConfig;
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
+import javax.print.Doc;
+import java.io.IOException;
 import java.net.URL;
+import java.util.Map;
 
 public class JsoupUtil {
 	public static Document GetDocument(String url,String encodingType){
@@ -57,6 +61,21 @@ public class JsoupUtil {
 				}
 			}
 		}
+		return doc;
+	}
+	public static Document httpPost(String url,Map<String,String> map,String cookie) throws IOException {
+		//获取请求连接
+		Connection con = Jsoup.connect(url);
+		//遍历生成参数
+		if(map!=null){
+			for (Map.Entry<String, String> entry : map.entrySet()) {
+				//添加参数
+				con.data(entry.getKey(), entry.getValue());
+			}
+		}
+		//插入cookie（头文件形式）
+//		con.header("Cookie", cookie);
+		Document doc = con.post();
 		return doc;
 	}
 	public static Document GetDocument(String url) {
