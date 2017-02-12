@@ -1,5 +1,6 @@
 package Spider.Start.School;
 
+import Spider.Bll.Thread.School.TutorialsTeacherSpider;
 import Spider.Bll.Thread.School.TutorialsTeacherThread;
 
 /**
@@ -7,9 +8,7 @@ import Spider.Bll.Thread.School.TutorialsTeacherThread;
  */
 public class TutorialsTeacherStart {
     public static void main(String[] a){
-        TutorialsTeacherThread th=new TutorialsTeacherThread();
-        Thread t=new Thread(th);
-        t.start();
+        TutorialsTeacherSpider spider=new TutorialsTeacherSpider();
+        spider.SpiderContent();
     }
-
 }

@@ -62,6 +62,7 @@
         <mapping class="Spider.Entity.CSDNMulu"></mapping>
         <mapping class="Spider.Entity.CSDNContent"></mapping>
         <mapping class="Spider.Entity.Cnblogs"></mapping>
+        <mapping class="Spider.Entity.SpiderSchool"></mapping>
     </session-factory>  
   
 </hibernate-configuration>  

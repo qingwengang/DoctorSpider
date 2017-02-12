@@ -15,6 +15,7 @@ public class TutorialsTeacherThread implements Runnable {
         Document doc= JsoupUtil.GetDocument(url);
         Element articleElement = doc.select(".article").get(0);
         SchoolElement sElement=new SchoolElement();
+        sElement.getChildren().add(new SchoolElement());
         for(Element child : articleElement.children()){
             boolean ifParsed=false;
             if(child.tagName().equals("p")){

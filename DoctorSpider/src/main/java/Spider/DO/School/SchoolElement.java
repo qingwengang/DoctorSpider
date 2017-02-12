@@ -1,5 +1,6 @@
 package Spider.DO.School;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -12,6 +13,15 @@ public class SchoolElement {
     private String googleContent;
     private String bingContent;
     private String youdaoContent;
+
+    public SchoolElement(){
+
+    }
+
+    public SchoolElement(String type,String enContent ) {
+        this.enContent = enContent;
+        this.type = type;
+    }
 
     public String getEnContent() {
         return enContent;
@@ -31,6 +41,12 @@ public class SchoolElement {
 
     public List<SchoolElement> getChildren() {
         return children;
+    }
+    public void addChild(SchoolElement element){
+        if(children==null){
+            children=new LinkedList<>();
+        }
+        children.add(element);
     }
 
     public void setChildren(List<SchoolElement> children) {
