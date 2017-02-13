@@ -32,15 +32,23 @@ public class TutorialsTeacherSpider {
                     sElement.addChild(ep);
                     ifParsed = true;
                 }
-                if (child.tagName().equals("div") && child.attr("class").contains("code-panel")) {
-                    sElement.addChild(new SchoolElement("C#", child.text()));
+                if(child.tagName().equals("div")&&child.attr("class").contains("noteDiv")){
+                    sElement.addChild(new SchoolElement("note", child.ownText()));
+                }
+                if(child.tagName().equals("div")&&child.attr("class").contains("points")){
+                    sElement.addChild(new SchoolElement("points", child.select(".col-xs-10").get(0).text()));
+                }
+                if (child.tagName().equals("div") && (child.attr("class").contains("code-panel")||child.attr("class").contains("panel-primary"))) {
+                    String sourceContent=child.select(".panel-body").get(0).text();
+                    sElement.addChild(new SchoolElement("source_C#", sourceContent));
                     ifParsed = true;
                 }
                 if (child.tagName().equals("div") && child.attr("class").contains("table-responsive")) {
                     Element table = child.getElementsByTag("table").get(0);
                     SchoolElement tableElement = new SchoolElement();
-                    for (Element tr : table.children()) {
+                    for (Element tr : table.getElementsByTag("tr")) {
                         SchoolElement trElement = new SchoolElement();
+                        trElement.setType("tr");
                         for (Element td : tr.children()) {
                             trElement.addChild(new SchoolElement("td", td.text()));
                         }
@@ -58,6 +66,7 @@ public class TutorialsTeacherSpider {
                     ifParsed = true;
                 }
                 if (child.tagName().equals("figure")) {
+                    sElement.addChild(new SchoolElement("img",""));
 //                String imgUrl=child.getElementsByTag("a").get(0).attr("href");
 //                imgUrl=imgUrl.replace("../","");
 //                try {
@@ -69,9 +78,25 @@ public class TutorialsTeacherSpider {
 //                ifParsed=true;
                 }
                 if (child.tagName().equals("samp")) {
-                    sElement.addChild(new SchoolElement("result", child.text()));
+                    sElement.addChild(new SchoolElement("source_result", child.text()));
 //                System.out.println(child.text());
                     ifParsed = true;
+                }
+                if(child.tagName().equals("ul")){
+                    SchoolElement ul=new SchoolElement();
+                    ul.setType("ul");
+                    for(Element li : child.getElementsByTag("li")){
+                        ul.addChild(new SchoolElement("li",li.text()));
+                    }
+                    sElement.addChild(ul);
+                }
+                if(child.tagName().equals("ol")){
+                    SchoolElement ul=new SchoolElement();
+                    ul.setType("ol");
+                    for(Element li : child.getElementsByTag("li")){
+                        ul.addChild(new SchoolElement("li",li.text()));
+                    }
+                    sElement.addChild(ul);
                 }
             }
             ObjectMapper mapper = new ObjectMapper();
@@ -81,10 +106,11 @@ public class TutorialsTeacherSpider {
             } catch (IOException e) {
             }
             SpiderSchool school = new SpiderSchool();
+            String[] urlArray=url.split("/");
             school.setContent(json);
             school.setResource("tutalTeacher");
-            school.setMuluType("C#");
-            school.setPageName("aaa");
+            school.setMuluType(urlArray[urlArray.length-2]);
+            school.setPageName(urlArray[urlArray.length-1]);
             new SpiderSchoolDao().Add(school);
             Elements es = doc.select(".next");
             if(es!=null && es.size()>0){

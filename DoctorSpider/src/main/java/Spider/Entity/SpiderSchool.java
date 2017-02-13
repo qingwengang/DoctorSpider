@@ -12,7 +12,9 @@ public class SpiderSchool {
     private long Id;
     private String Resource;
     private String Content;
-    private int IfFanyi;
+    private int IfFanyiGoogle;
+    private int IfFanyiBing;
+    private int IfFanyiYoudao;
     private String MuluType;
     private String PageName;
     @javax.persistence.Id
@@ -41,12 +43,28 @@ public class SpiderSchool {
         Content = content;
     }
 
-    public int getIfFanyi() {
-        return IfFanyi;
+    public int getIfFanyiGoogle() {
+        return IfFanyiGoogle;
     }
 
-    public void setIfFanyi(int ifFanyi) {
-        IfFanyi = ifFanyi;
+    public void setIfFanyiGoogle(int ifFanyiGoogle) {
+        IfFanyiGoogle = ifFanyiGoogle;
+    }
+
+    public int getIfFanyiBing() {
+        return IfFanyiBing;
+    }
+
+    public void setIfFanyiBing(int ifFanyiBing) {
+        IfFanyiBing = ifFanyiBing;
+    }
+
+    public int getIfFanyiYoudao() {
+        return IfFanyiYoudao;
+    }
+
+    public void setIfFanyiYoudao(int ifFanyiYoudao) {
+        IfFanyiYoudao = ifFanyiYoudao;
     }
 
     public String getMuluType() {
