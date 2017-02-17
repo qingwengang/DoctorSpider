@@ -9,6 +9,11 @@ import Spider.Bll.Thread.School.TutorialsTeacherThread;
 public class TutorialsTeacherStart {
     public static void main(String[] a){
         TutorialsTeacherSpider spider=new TutorialsTeacherSpider();
-        spider.SpiderContent();
+//        spider.SpiderContent("/csharp/csharp-tutorials","c#");
+//        spider.SpiderContent("/linq/linq-tutorials","c#");
+//        spider.SpiderContent("/mvc/asp.net-mvc-tutorials","c#");
+//        spider.SpiderContent("/javascript/javascript-tutorials","js");
+//        spider.SpiderContent("/javascript/class-in-javascript","js");
+        spider.SpiderContent("/jquery/jquery-tutorials","js");
     }
 }

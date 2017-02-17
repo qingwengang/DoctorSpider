@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8697f40-5a4a-4000-a0ff-a061ea141dcf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpiderWeb/DoctorSpiderWeb.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/SpiderSchool.java" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/SpiderSchool.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/BaseSchoolSpider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/JavaTPointSpider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/JavaTPointStart.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoctorSpider/src/test/Util/ImgUtilTest.java" afterPath="$PROJECT_DIR$/DoctorSpider/src/test/Util/ImgUtilTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/TutorialsTeacherSpider.java" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/TutorialsTeacherSpider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/TutorialsTeacherStart.java" afterPath="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/TutorialsTeacherStart.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Doctor.iws" />
@@ -38,34 +41,65 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TutorialsTeacherSpider.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/TutorialsTeacherSpider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4511173">
-              <caret line="90" column="42" selection-start-line="90" selection-start-column="42" selection-end-line="90" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SchoolElement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/DO/School/SchoolElement.java">
+      <file leaf-file-name="BaseSchoolSpider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/BaseSchoolSpider.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
-                <element signature="e#1112#1113#0" expanded="true" />
-                <element signature="e#1152#1153#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TutorialsTeacherStart.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/TutorialsTeacherStart.java">
+      <file leaf-file-name="JavaTPointSpider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/JavaTPointSpider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.566667">
+              <caret line="120" column="40" selection-start-line="120" selection-start-column="40" selection-end-line="120" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JavaTPointStart.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/JavaTPointStart.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetImgUrl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/GetImgUrl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImgUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Util/ImgUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImgUtilTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DoctorSpider/src/test/Util/ImgUtilTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.27787933">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -98,9 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/DO/JKW/JKWQuestionDO.java" />
-        <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Util/JsonUtil.java" />
-        <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/JKW/SpiderJKWQuestionHandler.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/test/Spider/Bll/JKW/SpiderJKWQuestionHandlerTest.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/CommonHandlerThread.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/JKWStart.java" />
@@ -141,14 +172,17 @@
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/MongoTest.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/TutorialsTeacherThread.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Util/ImgUtil.java" />
-        <option value="$PROJECT_DIR$/DoctorSpider/src/test/Util/ImgUtilTest.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/CSDNContent.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Dao/SpiderSchoolDao.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/TutorialsTeacherStart.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/SpiderSchool.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/DO/School/SchoolElement.java" />
+        <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/TutorialsTeacherStart.java" />
         <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/TutorialsTeacherSpider.java" />
+        <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/BaseSchoolSpider.java" />
+        <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/JavaTPointSpider.java" />
+        <option value="$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/JavaTPointStart.java" />
+        <option value="$PROJECT_DIR$/DoctorSpider/src/test/Util/ImgUtilTest.java" />
       </list>
     </option>
   </component>
@@ -224,10 +258,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1912" />
-    <option name="y" value="246" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="x" value="1920" />
+    <option name="width" value="1920" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -252,7 +285,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -743,7 +776,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -811,27 +844,7 @@
       <recent name="Spider.Config" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TutorialsTeacherStart">
-    <configuration default="false" name="CnblogsStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Spider.Start.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="Spider.Start.CnblogsStart" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="DoctorSpider" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.ImgUtilTest">
     <configuration default="false" name="TutorialsTeacherStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -840,26 +853,6 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="Spider.Start.School.TutorialsTeacherStart" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="DoctorSpider" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="MongoTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Spider.Start.School.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="Spider.Start.School.MongoTest" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -922,6 +915,46 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="JavaTPointStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Spider.Start.School.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="Spider.Start.School.JavaTPointStart" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="DoctorSpider" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Log4jTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="Util.Log4jTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="DoctorSpider" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1223,19 +1256,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.GetSJQuestionListHandlerTest" />
-      <item index="1" class="java.lang.String" itemvalue="Application.CnblogsStart" />
-      <item index="2" class="java.lang.String" itemvalue="Application.TutorialsTeacherStart" />
-      <item index="3" class="java.lang.String" itemvalue="Application.MongoTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ImgUtilTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.ImgUtilTest.testDownload" />
+      <item index="1" class="java.lang.String" itemvalue="Application.TutorialsTeacherStart" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ImgUtilTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ImgUtilTest.testDownload" />
+      <item index="4" class="java.lang.String" itemvalue="Application.JavaTPointStart" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Log4jTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.TutorialsTeacherStart" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ImgUtilTest" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.ImgUtilTest.testDownload" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ImgUtilTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.MongoTest" />
-        <item index="4" class="java.lang.String" itemvalue="Application.CnblogsStart" />
+        <item index="2" class="java.lang.String" itemvalue="Application.JavaTPointStart" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Log4jTest" />
+        <item index="4" class="java.lang.String" itemvalue="Application.TutorialsTeacherStart" />
       </list>
     </recent_temporary>
   </component>
@@ -1288,7 +1321,8 @@
       <workItem from="1486875883361" duration="2275000" />
       <workItem from="1486878738662" duration="61000" />
       <workItem from="1486878896361" duration="6747000" />
-      <workItem from="1486948307476" duration="10239000" />
+      <workItem from="1486948307476" duration="22216000" />
+      <workItem from="1487209988785" duration="8409000" />
     </task>
     <task id="LOCAL-00001" summary="好大夫">
       <created>1465727560188</created>
@@ -1312,11 +1346,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="264780000" />
+    <option name="totallyTimeSpent" value="285166000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="246" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <frame x="1920" y="0" width="1920" height="1040" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1326,17 +1360,18 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28385416" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36107382" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36633664" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34575835" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2892473" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35243243" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3520352" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1345,7 +1380,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1547,13 +1581,36 @@
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/TutorialsTeacherSpider.java</url>
-          <line>46</line>
+          <url>file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/JavaTPointSpider.java</url>
           <properties />
-          <option name="timeStamp" value="42" />
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/JavaTPointSpider.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/JavaTPointSpider.java</url>
+          <line>3</line>
+          <properties />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/JavaTPointSpider.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/JavaTPointSpider.java</url>
+          <line>120</line>
+          <properties />
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="43" />
+      <option name="time" value="53" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1572,6 +1629,7 @@
         <watch expression="doc.select(&quot;.sub &gt; a&quot;)" />
         <watch expression="doc.select(&quot;.sub &gt; span &gt; a&quot;)" language="JAVA" custom="" />
         <watch expression="mulu.getId()" />
+        <watch expression="child.attr(&quot;class&quot;)" language="JAVA" custom="" />
       </configuration>
     </watches-manager>
   </component>
@@ -1580,66 +1638,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/TutorialsTeacherStart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/DO/School/SchoolElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorSpider/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/SpiderAskQuestionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6098765">
-          <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Dao/CSDNMuluDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24498567">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Entity/CSDNMulu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21776505">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Config/StockConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37087086">
-          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Util/FileHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.475976">
-          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Util/LogUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3138138">
@@ -1729,14 +1727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/GetImgUrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3101197">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/SpiderAskQuestionHandlerThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2274211">
@@ -1751,14 +1741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/CnblogsContentThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3658243">
-          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/resources/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.12">
@@ -1770,13 +1752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2687704">
           <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Dao/BaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35146898">
-          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1880,20 +1855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Util/ImgUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12893982">
-          <caret line="40" column="30" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/test/Util/ImgUtilTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4355301">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Util/JsoupUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1942,33 +1903,139 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18607181">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/DO/School/SchoolElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.16964285">
           <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
           <folding>
-            <element signature="e#1112#1113#0" expanded="true" />
-            <element signature="e#1152#1153#0" expanded="true" />
+            <element signature="e#1112#1113#0" expanded="false" />
+            <element signature="e#1152#1153#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/TutorialsTeacherStart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
+        <state vertical-scroll-proportion="0.10602678">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/TutorialsTeacherSpider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4511173">
-          <caret line="90" column="42" selection-start-line="90" selection-start-column="42" selection-end-line="90" selection-end-column="42" />
+        <state vertical-scroll-proportion="2.268973">
+          <caret line="117" column="19" selection-start-line="117" selection-start-column="16" selection-end-line="117" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/BaseSchoolSpider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar!/org/apache/log4j/Category.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3421355">
+          <caret line="116" column="16" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/CnblogsContentThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65292096">
+          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Dao/CnblogsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22852233">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Dao/BaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Util/Log4jTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="73" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/Thread/School/JavaTPointSpider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.566667">
+          <caret line="120" column="40" selection-start-line="120" selection-start-column="40" selection-end-line="120" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/JavaTPointStart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Bll/School/ImgUpload.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48181817">
+          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Spider/Start/School/GetImgUrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/main/java/Util/ImgUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoctorSpider/src/test/Util/ImgUtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27787933">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>

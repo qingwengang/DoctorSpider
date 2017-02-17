@@ -16,9 +16,9 @@ import java.io.IOException;
  * Created by Administrator on 2017/2/12.
  */
 public class TutorialsTeacherSpider {
-    public void SpiderContent() {
+    public void SpiderContent(String url,String codeType) {
         boolean flag = true;
-        String url = "/csharp/csharp-tutorials";
+//        String url = "/csharp/csharp-tutorials";
         while (flag) {
 
             url="http://www.tutorialsteacher.com"+url;
@@ -40,12 +40,13 @@ public class TutorialsTeacherSpider {
                 }
                 if (child.tagName().equals("div") && (child.attr("class").contains("code-panel")||child.attr("class").contains("panel-primary"))) {
                     String sourceContent=child.select(".panel-body").get(0).text();
-                    sElement.addChild(new SchoolElement("source_C#", sourceContent));
+                    sElement.addChild(new SchoolElement("source_"+codeType, sourceContent));
                     ifParsed = true;
                 }
                 if (child.tagName().equals("div") && child.attr("class").contains("table-responsive")) {
                     Element table = child.getElementsByTag("table").get(0);
                     SchoolElement tableElement = new SchoolElement();
+                    tableElement.setType("table");
                     for (Element tr : table.getElementsByTag("tr")) {
                         SchoolElement trElement = new SchoolElement();
                         trElement.setType("tr");
