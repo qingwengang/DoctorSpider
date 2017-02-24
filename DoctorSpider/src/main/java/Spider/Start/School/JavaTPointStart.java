@@ -8,8 +8,10 @@ import Spider.Bll.Thread.School.JavaTPointSpider;
 public class JavaTPointStart {
     public static void main(String[] args){
         JavaTPointSpider s=new JavaTPointSpider();
-        s.Spider("java-tutorial","java");
-        s.Spider("java-get-current-date","java");
-        s.Spider("collections-in-java","java");
+//        s.Spider("java-tutorial","java","java");
+//        s.Spider("java-get-current-date","java","java");
+//        s.Spider("collections-in-java","java","java");
+//        s.Spider("servlet-api","java","servlet");
+//        s.Spider("page-implicit-object","java","jsp");
     }
 }

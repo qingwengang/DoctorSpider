@@ -3,6 +3,7 @@ package Spider.Bll.Thread.School;
 import Spider.DO.School.SchoolElement;
 import Spider.Dao.SpiderSchoolDao;
 import Spider.Entity.SpiderSchool;
+import Util.ImgUtil;
 import Util.JsoupUtil;
 import com.sun.javafx.binding.StringFormatter;
 import org.apache.log4j.Logger;
@@ -20,14 +21,14 @@ import java.util.List;
 public class JavaTPointSpider {
     private static Logger logger = Logger.getLogger(JavaTPointSpider.class);
     private SchoolElement sElement;
-    public void Spider(String url,String codeType){
+    public void Spider(String url,String codeType,String mulu){
         boolean flag=true;
         while(flag){
             String url1="http://www.javatpoint.com/"+url;
             Document doc = JsoupUtil.GetDocument(url1);
             Element articleElement = doc.getElementById("city").getElementsByTag("table").get(0).getElementsByTag("tbody").get(0).getElementsByTag("tr").get(0).getElementsByTag("td").get(0);
             sElement = new SchoolElement();
-            spiderElement(articleElement,url1);
+            spiderElement(articleElement,url1,url,mulu);
             ObjectMapper mapper = new ObjectMapper();
             String json = "";
             try {
@@ -35,12 +36,26 @@ public class JavaTPointSpider {
             } catch (IOException e) {
             }
             SpiderSchool school = new SpiderSchool();
-            school.setContent(json);
-            school.setResource("javatpoint");
-            school.setMuluType("java");
-            school.setPageName(url);
-            new SpiderSchoolDao().Add(school);
-            Elements es = doc.select(".next");
+                school.setContent(json);
+                school.setResource("javatpoint");
+                school.setMuluType(mulu);
+                school.setPageName(url);
+                new SpiderSchoolDao().Add(school);
+                Elements es = doc.select(".next");
+                if(es==null || es.size()==0){
+                    Element e=doc.getElementById("next");
+                if(e!=null){
+                    url=e.attr("href");
+                    String sql="select * from spiderschool where resource='javatpoint' and pagename='"+url+"'";
+                    List<SpiderSchool> sslist=new SpiderSchoolDao().Query(sql);
+                    if(sslist!=null && sslist.size()>0){
+                        flag=false;
+
+                    }else{
+                        continue;
+                    }
+                }
+            }
             if(es!=null && es.size()>0){
                 for(Element e : es){
                     if(e.ownText().contains("next")){
@@ -58,7 +73,8 @@ public class JavaTPointSpider {
         }
     }
 
-    private void spiderElement(Element articleElement,String url1){
+    private void spiderElement(Element articleElement,String url1,String url,String mulu){
+        int imgid=1;
         for (Element child : articleElement.children()) {
             boolean ifParsed = false;
             try {
@@ -88,7 +104,10 @@ public class JavaTPointSpider {
             }
             if(child.tagName().equals("img")){
                 try{
-                    sElement.addChild(new SchoolElement("source_result", child.text()));
+                    sElement.addChild(new SchoolElement("img", ""));
+
+                    ImgUtil.download("http://www.javatpoint.com/" + child.attr("src"), imgid + ".png", "E:\\猿教程\\" + mulu + "\\" + url + "\\");
+                    imgid++;
                 }catch (Exception e){
                     logger.error("jaratpoint2:"+url1,e);
                 }
@@ -118,7 +137,7 @@ public class JavaTPointSpider {
                 }
             }
             if(child.tagName().equals("div") && child.attr("class")==""){
-                spiderElement(child,url1);
+                spiderElement(child,url1,url,mulu);
             }
             if(child.tagName().equals("table")){
                 try{
@@ -138,5 +157,39 @@ public class JavaTPointSpider {
                 }
             }
         }
+    }
+
+    public void UpdateContent(long id){
+        String sql="select * from spiderschool where id="+id;
+        SpiderSchool ss=new SpiderSchoolDao().QuerySingle(sql);
+        ObjectMapper mapper = new ObjectMapper();
+        SchoolElement se=null;
+        try {
+            se=mapper.readValue(ss.getContent(),SchoolElement.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        List<SchoolElement> seH3list=se.GetElementsByTagName("h3");
+        String url1="http://www.javatpoint.com/"+ss.getPageName();
+        Document doc = JsoupUtil.GetDocument(url1);
+        Element articleElement = doc.getElementById("city").getElementsByTag("table").get(0).getElementsByTag("tbody").get(0).getElementsByTag("tr").get(0).getElementsByTag("td").get(0);
+        List<Element> h3list=articleElement.getElementsByTag("h3");
+        for(Element h3 : h3list){
+            for(SchoolElement seH3 : seH3list){
+                if(seH3.getEnContent().equals(h3.text())){
+                    if(h3.attr("class").toLowerCase().equals("h2")){
+                        seH3.setType("h2");
+                    }
+                }
+            }
+        }
+        mapper = new ObjectMapper();
+        String json = "";
+        try {
+            json = mapper.writeValueAsString(se);
+        } catch (IOException e) {
+        }
+        ss.setContent(json);
+        new SpiderSchoolDao().Update(ss);
     }
 }

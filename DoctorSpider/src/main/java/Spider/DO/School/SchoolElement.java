@@ -76,4 +76,26 @@ public class SchoolElement {
     public void setYoudaoContent(String youdaoContent) {
         this.youdaoContent = youdaoContent;
     }
+
+    /**
+     * 获取某个类型的所有子节点的集合
+     * @param tagName
+     * @return
+     */
+    public List<SchoolElement> GetElementsByTagName(String tagName){
+        List<SchoolElement> resultList=new LinkedList<>();
+        if(this.type!=null && this.type.equals(tagName)){
+            resultList.add(this);
+        }
+        if(children!=null && children.size()>0){
+            for(SchoolElement item : children){
+                List<SchoolElement> itemList=item.GetElementsByTagName(tagName);
+                if(itemList!=null && itemList.size()>0){
+                    resultList.addAll(itemList);
+                }
+            }
+        }
+        return resultList;
+    }
+
 }

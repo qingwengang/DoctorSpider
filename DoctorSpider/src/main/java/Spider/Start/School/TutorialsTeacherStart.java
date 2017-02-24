@@ -14,6 +14,7 @@ public class TutorialsTeacherStart {
 //        spider.SpiderContent("/mvc/asp.net-mvc-tutorials","c#");
 //        spider.SpiderContent("/javascript/javascript-tutorials","js");
 //        spider.SpiderContent("/javascript/class-in-javascript","js");
-        spider.SpiderContent("/jquery/jquery-tutorials","js");
+//        spider.SpiderContent("/jquery/jquery-tutorials","js");
+        spider.SpiderContent("/EntityFramework5/entity-framework5-introduction.aspx","entity5");
     }
 }
