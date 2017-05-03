@@ -78,7 +78,10 @@ public class JavaTPointSpider {
         for (Element child : articleElement.children()) {
             boolean ifParsed = false;
             try {
-                if (child.tagName().equals("p") || child.tagName().equals("h1") || child.tagName().equals("h2") || child.tagName().equals("h3") || child.tagName().equals("h4")) {
+                if(child.tagName().equals("h3") && child.attr("class")!=null && child.attr("class").toLowerCase().equals("h2")){
+                    SchoolElement ep = new SchoolElement("h2", child.text());
+                    sElement.addChild(ep);
+                }else if (child.tagName().equals("p") || child.tagName().equals("h1") || child.tagName().equals("h2") || child.tagName().equals("h3") || child.tagName().equals("h4")) {
                     SchoolElement ep = new SchoolElement(child.tagName(), child.text());
                     sElement.addChild(ep);
                     ifParsed = true;

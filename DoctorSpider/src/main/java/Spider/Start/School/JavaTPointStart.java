@@ -13,5 +13,6 @@ public class JavaTPointStart {
 //        s.Spider("collections-in-java","java","java");
 //        s.Spider("servlet-api","java","servlet");
 //        s.Spider("page-implicit-object","java","jsp");
+        s.Spider("spring-and-jpa-integration","java","spring");
     }
 }
